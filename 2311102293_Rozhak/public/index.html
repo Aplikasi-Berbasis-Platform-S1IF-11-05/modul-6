@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventaris — Pak Cik & Aimar</title>
+    <meta name="author" content="Rozhak">
+    <meta name="nim" content="2311102293">
+    <meta name="description" content="Task 6: Toko Kelontong Pak Cik dan Aimar">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <nav class="navbar sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+                <i class="bi bi-box-seam-fill text-primary"></i>
+                <span>Toko Kelontong Pak Cik & Aimar</span>
+            </a>
+            <div class="d-flex align-items-center gap-3">
+                <span class="text-muted small d-none d-md-block">Admin Dashboard</span>
+                <div class="vr mx-2 d-none d-md-block"></div>
+                <button class="btn btn-primary btn-sm" id="btnTambahData">
+                    <i class="bi bi-plus-lg me-1"></i> Produk Baru
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-5">
+        <!-- Dashboard Stats Overview -->
+        <div class="row g-4 mb-5">
+            <div class="col-md-4">
+                <div class="stat-card">
+                    <span class="stat-label">Total Produk</span>
+                    <span class="stat-value" id="statTotalItems">0</span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="stat-card">
+                    <span class="stat-label">Stok Hampir Habis</span>
+                    <span class="stat-value text-danger" id="statLowStock">0</span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="stat-card">
+                    <span class="stat-label">Nilai Inventaris</span>
+                    <span class="stat-value" id="statTotalValue">Rp 0</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-end mb-4">
+            <div>
+                <h2 class="h4 fw-bold mb-1">Manajemen Stok</h2>
+                <p class="text-muted small mb-0">Kelola dan pantau barang di gudang Pak Cik & Aimar.</p>
+            </div>
+        </div>
+
+        <div class="content-card">
+            <div class="table-responsive">
+                <table id="productTable" class="table table-hover w-100">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nama Produk</th>
+                            <th>Kategori</th>
+                            <th>Harga</th>
+                            <th>Stok</th>
+                            <th class="text-end">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-utility">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <p class="mb-0 small">
+                       <span class="footer-brand me-2">Toko Kelontong Pak Cik & Aimar</span>
+                        &copy; 2026 Rozhak. Built for Module 7 Practical Web. 
+                    </p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="system-status">
+                        <span class="status-dot" id="systemStatusDot"></span>
+                        <span id="systemStatusText">System Offline</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Form -->
+    <div class="modal fade" id="formModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="fw-bold m-0" id="formModalLabel">Produk Baru</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form id="productForm">
+                    <div class="modal-body">
+                        <input type="hidden" id="productId">
+                        
+                        <div class="mb-4">
+                            <label for="name" class="form-label">Nama Barang</label>
+                            <input type="text" class="form-control" id="name" required placeholder="Contoh: Beras Premium 5kg">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="category" class="form-label">Kategori</label>
+                            <select class="form-select" id="category" required>
+                                <option value="">Pilih kategori...</option>
+                                <option value="Sembako">Sembako</option>
+                                <option value="Makanan">Makanan</option>
+                                <option value="Minuman">Minuman</option>
+                                <option value="Peralatan">Peralatan</option>
+                                <option value="Lainnya">Lainnya</option>
+                            </select>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-6 mb-2">
+                                <label for="price" class="form-label">Harga Satuan</label>
+                                <div class="input-group">
+                                    <span class="input-group-text bg-white">Rp</span>
+                                    <input type="number" class="form-control" id="price" required min="0">
+                                </div>
+                            </div>
+                            <div class="col-6 mb-2">
+                                <label for="stock" class="form-label">Stok Tersedia</label>
+                                <input type="number" class="form-control" id="stock" required min="0">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Batal</button>
+                        <button type="submit" class="btn btn-primary px-4" id="btnSave">Simpan</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Delete -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body text-center py-5 px-4">
+                    <div class="mb-4">
+                        <div class="mx-auto d-flex align-items-center justify-content-center" style="width: 64px; height: 64px; background: #fee2e2; border-radius: 50%;">
+                            <i class="bi bi-trash3 text-danger fs-3"></i>
+                        </div>
+                    </div>
+                    <h4 class="fw-bold mb-2">Hapus Produk</h4>
+                    <p class="text-muted px-4">Apakah Anda yakin ingin menghapus produk ini? Tindakan ini bersifat permanen dan data tidak dapat dipulihkan kembali.</p>
+                </div>
+                <div class="modal-footer p-4 border-0 d-flex gap-3 justify-content-center">
+                    <button type="button" class="btn btn-light px-4" data-bs-dismiss="modal">Batalkan</button>
+                    <button type="button" class="btn btn-danger-flat px-4" id="btnConfirmDelete">Ya, Hapus Produk</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-4">
+        <div id="liveToast" class="toast align-items-center border-0 shadow-lg" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body fw-medium p-3" id="toastMessage">
+                    Operasi berhasil.
+                </div>
+                <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "name": "Beras Maknyus 5kg",
+    "category": "Sembako",
+    "price": 75000,
+    "stock": 20
+  },
+  {
+    "id": 2,
+    "name": "Indomie Goreng (Karton)",
+    "category": "Makanan",
+    "price": 115000,
+    "stock": 15
+  }
+]
