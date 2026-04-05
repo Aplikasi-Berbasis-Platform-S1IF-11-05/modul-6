@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1775410344,
+        "nama": "Gula",
+        "harga": "5000",
+        "stok": "100"
+    },
+    {
+        "id": 1775410362,
+        "nama": "Minyak Goreng",
+        "harga": "17000",
+        "stok": "100"
+    },
+    {
+        "id": 1775413523,
+        "nama": "Tepung Terigu",
+        "harga": "6000",
+        "stok": "100"
+    }
+]
