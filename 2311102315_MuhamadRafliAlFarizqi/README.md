@@ -1,58 +1,107 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Inventori Toko Kelontong Pak Cik & Aimar
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+**Modul 6 - Aplikasi Berbasis Platform**
+Muhamad Rafli Al Farizqi — 2311102315
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Deskripsi Project
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Aplikasi web inventori untuk mengelola produk Toko Kelontong milik Pak Cik & Aimar. Dibangun menggunakan **Laravel 13** sebagai backend framework, dengan data disimpan dalam format **JSON** (tanpa database). Frontend menggunakan **Bootstrap 5** untuk styling, **jQuery** untuk DOM manipulation, dan **DataTables** untuk menampilkan data produk secara interaktif.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Fitur
 
-## Learning Laravel
+- **CRUD Produk** — Create, Read, Update, Delete produk toko
+- **DataTables** — Tabel interaktif dengan fitur pencarian, sorting, dan pagination
+- **Form Tambah Produk** — Modal form untuk menambahkan produk baru
+- **Form Edit Produk** — Modal form untuk mengedit produk yang sudah ada
+- **Konfirmasi Hapus** — Modal konfirmasi sebelum menghapus produk
+- **Dashboard Statistik** — Ringkasan total produk, total stok, jumlah kategori, dan peringatan stok rendah
+- **Indikator Stok** — Badge warna untuk status stok (Rendah/Sedang/Aman)
+- **Notifikasi Toast** — Feedback visual setelah setiap operasi CRUD
+- **Validasi Form** — Validasi input di sisi server (Laravel) dengan feedback error
+- **Penyimpanan JSON** — Data produk disimpan di file `storage/app/products.json`
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Tech Stack
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+| Komponen    | Teknologi                     |
+|-------------|-------------------------------|
+| Backend     | Laravel 13 (PHP 8.3+)        |
+| Frontend    | Bootstrap 5.3, jQuery 3.7    |
+| Tabel Data  | DataTables 1.13               |
+| Ikon        | Bootstrap Icons               |
+| Penyimpanan | JSON File (`products.json`)   |
+| DOM         | jQuery (AJAX, event handling) |
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+## Struktur Project (File Utama)
 
-## Agentic Development
-
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
-
-```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+```
+├── app/Http/Controllers/
+│   └── ProductController.php       # Controller CRUD dengan JSON storage
+├── resources/views/products/
+│   └── index.blade.php             # Halaman utama (DataTable + Modal)
+├── routes/
+│   └── web.php                     # Routing aplikasi
+├── storage/app/
+│   └── products.json               # Data produk (JSON)
+└── README.md                       # Dokumentasi project
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+## Instalasi & Menjalankan
 
-## Contributing
+### Prasyarat
+- PHP >= 8.3
+- Composer
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Langkah-langkah
 
-## Code of Conduct
+```bash
+# 1. Clone repository / masuk ke direktori project
+cd 2311102315_MuhamadRafliAlFarizqi
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+# 2. Install dependencies
+composer install
 
-## Security Vulnerabilities
+# 3. Copy file environment
+cp .env.example .env
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+# 4. Generate application key
+php artisan key:generate
 
-## License
+# 5. Jalankan server
+php artisan serve
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Buka browser di **http://localhost:8000**
+
+## API Endpoints
+
+| Method   | URL               | Deskripsi                          |
+|----------|-------------------|------------------------------------|
+| `GET`    | `/products`       | Halaman utama daftar produk        |
+| `GET`    | `/products/data`  | API: Ambil semua data produk (JSON)|
+| `POST`   | `/products`       | API: Tambah produk baru            |
+| `GET`    | `/products/{id}`  | API: Detail satu produk            |
+| `PUT`    | `/products/{id}`  | API: Update produk                 |
+| `DELETE` | `/products/{id}`  | API: Hapus produk                  |
+
+## Kategori Produk
+
+Makanan, Minuman, Snack, Bumbu Dapur, Peralatan Rumah, Kebersihan, Rokok, Obat-obatan, Lainnya
+
+## Screenshot
+
+Setelah menjalankan server, halaman utama akan menampilkan:
+1. **Navbar** — Header dengan nama toko
+2. **Kartu Statistik** — 4 kartu ringkasan (Total Produk, Total Stok, Kategori, Stok Rendah)
+3. **Tabel DataTables** — Daftar produk dengan tombol Edit & Hapus
+4. **Modal Tambah/Edit** — Form input produk
+5. **Modal Hapus** — Konfirmasi penghapusan produk
+
+## Cara Penggunaan
+
+1. **Tambah Produk**: Klik tombol "Tambah Produk" > Isi form > Klik "Simpan"
+2. **Edit Produk**: Klik ikon pensil (kuning) pada baris produk > Ubah data > Klik "Simpan"
+3. **Hapus Produk**: Klik ikon tempat sampah (merah) pada baris produk > Konfirmasi "Ya, Hapus!"
+4. **Cari Produk**: Gunakan kotak pencarian di DataTable
+5. **Sorting**: Klik header kolom untuk mengurutkan data
