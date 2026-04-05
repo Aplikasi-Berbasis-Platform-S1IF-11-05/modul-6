@@ -1,0 +1,24 @@
+{
+  "name": "modul-6",
+  "version": "1.0.0",
+  "description": "Silahkan upload tugas yang sudah diberikan beserta source code nya di folder masing masing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aplikasi-Berbasis-Platform-S1IF-11-05/modul-6.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Aplikasi-Berbasis-Platform-S1IF-11-05/modul-6/issues"
+  },
+  "homepage": "https://github.com/Aplikasi-Berbasis-Platform-S1IF-11-05/modul-6#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
