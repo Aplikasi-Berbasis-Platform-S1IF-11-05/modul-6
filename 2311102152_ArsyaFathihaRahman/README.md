@@ -352,6 +352,15 @@ http://127.0.0.1:8000
 
 
 Output:
+Tampilan Hasil
+<img width="1912" height="1009" alt="Screenshot 2026-04-06 012541" src="https://github.com/user-attachments/assets/8d48ae86-acd6-4e2c-8cd5-79c5e10f6101" />
+
+Tampilan Edit
+<img width="1913" height="1016" alt="Screenshot 2026-04-06 013151" src="https://github.com/user-attachments/assets/aa4982b7-b6fe-4ad6-b45b-b287e2c20e4a" />
+
+Tampilan Hapus
+<img width="1919" height="1021" alt="Screenshot 2026-04-06 013204" src="https://github.com/user-attachments/assets/4ad3afee-9301-4c23-99e3-347d70a7c766" />
+
 
 # Penjelasan
 
