@@ -1,0 +1,27 @@
+{
+  "name": "toko-kelontong-pak-cik-aimar",
+  "version": "1.0.0",
+  "description": "Aplikasi inventaris toko berbasis Express.js, jQuery, Bootstrap 5, dan DataTables dengan penyimpanan data JSON.",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "keywords": [
+    "inventaris",
+    "express",
+    "jquery",
+    "crud",
+    "bootstrap",
+    "json",
+    "datatables"
+  ],
+  "author": "Rozhak",
+  "license": "ISC",
+  "private": true,
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  }
+}
