@@ -889,6 +889,10 @@ Route::delete('/products/{id}', [ProductController::class, 'destroy'])->name('pr
 ]
 ```
 
+Output:
+<br>
+<img src="result.png" width="100%">
+
 # Penjelasan
 
 Kode pada praktikum ini terdiri dari tiga bagian utama, yaitu server (Laravel), frontend (Blade + Bootstrap), dan interaksi (jQuery + DataTables).
