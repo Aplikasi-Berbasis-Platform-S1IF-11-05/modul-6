@@ -54,19 +54,10 @@ Dalam pengembangan web, HTML digunakan sebagai struktur, CSS sebagai tampilan, d
 
 ---
 
-🧪 Tugas 6
-📌 Aplikasi Inventori Toko Kelontong
-🔧 ROUTES (routes/web.php)
-<?php
+##🧪 Tugas 6
+## 🎨 VIEW (index.blade.php)
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProductController;
-
-Route::get('/', [ProductController::class, 'index']);
-Route::post('/store', [ProductController::class, 'store']);
-Route::post('/update/{id}', [ProductController::class, 'update']);
-Route::delete('/delete/{id}', [ProductController::class, 'delete']);
-🎨 VIEW (index.blade.php)
+```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -81,143 +72,40 @@ body {
     background: linear-gradient(135deg, #0f172a, #1e3a8a);
     color: white;
 }
-.card {
-    background: rgba(0, 0, 0, 0.6);
-    border: 1px solid #3b82f6;
-    border-radius: 20px;
-}
-.btn-main {
-    background: linear-gradient(135deg, #3b82f6, #06b6d4);
-    color: white;
-}
 </style>
 </head>
 
-<body class="p-4">
+<body>
 
-<div class="container">
+<h2>Cyber Store</h2>
 
-<h2 class="text-center mb-4">⚡ Cyber Store</h2>
-
-<div class="card p-4 mb-4">
 <form method="POST" action="/store">
 @csrf
-<input name="nama" class="form-control mb-2" placeholder="Produk">
-<input name="harga" class="form-control mb-2" placeholder="Harga">
-<input name="stok" class="form-control mb-2" placeholder="Stok">
-<button class="btn btn-main w-100">Tambah</button>
+<input name="nama">
+<button>Tambah</button>
 </form>
-</div>
 
-<div class="card p-4">
-<table class="table table-dark text-center">
-<thead>
-<tr>
-<th>Nama</th>
-<th>Harga</th>
-<th>Stok</th>
-<th>Aksi</th>
-</tr>
-</thead>
-
-<tbody>
 @foreach($items as $i)
-<tr>
-<td>{{ $i['nama'] }}</td>
-<td>{{ $i['harga'] }}</td>
-<td>{{ $i['stok'] }}</td>
-<td>
-
-<form method="POST" action="/delete/{{ $i['id'] }}">
-@csrf
-@method('DELETE')
-<button class="btn btn-danger">Hapus</button>
-</form>
-
-</td>
-</tr>
+<p>{{ $i['nama'] }}</p>
 @endforeach
-</tbody>
-</table>
-</div>
-
-</div>
 
 </body>
 </html>
-⚙️ CONTROLLER (ProductController.php)
-<?php
-
-namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
-
-class ProductController extends Controller
-{
-    private $file = 'products.json';
-
-    private function read()
-    {
-        $path = storage_path('app/' . $this->file);
-
-        if (!file_exists($path)) {
-            file_put_contents($path, '[]');
-        }
-
-        return json_decode(file_get_contents($path), true);
-    }
-
-    private function write($data)
-    {
-        $path = storage_path('app/' . $this->file);
-        file_put_contents($path, json_encode($data, JSON_PRETTY_PRINT));
-    }
-
-    public function index()
-    {
-        return view('products.index', [
-            'items' => $this->read()
-        ]);
-    }
-
-    public function store(Request $request)
-    {
-        $data = $this->read();
-
-        $data[] = [
-            'id' => uniqid(),
-            'nama' => $request->nama,
-            'harga' => $request->harga,
-            'stok' => $request->stok
-        ];
-
-        $this->write($data);
-        return back();
-    }
-
-    public function delete($id)
-    {
-        $data = array_filter($this->read(), fn($item) => $item['id'] != $id);
-        $this->write(array_values($data));
-        return back();
-    }
-}
-📌 Penjelasan
-
-Aplikasi ini merupakan sistem inventori sederhana berbasis Laravel.
-
-Fitur:
-Tambah produk
-Hapus produk
-Data disimpan dalam JSON
-Teknologi:
-Laravel
-Bootstrap
-JavaScript & jQuery
-✅ Output
-
-Menampilkan daftar produk dan CRUD sederhana.
 
 
+---
+---
+Hasil:
+<img width="1920" height="1080" alt="cyber" src="https://github.com/user-attachments/assets/beb627c4-e153-4025-8e7d-8988a2bd2dee" />
 
+---
+# 📝 Kesimpulan
 
+Berdasarkan praktikum yang telah dilakukan pada Modul 6 mengenai **JavaScript dan jQuery**, dapat disimpulkan bahwa:
+
+* JavaScript merupakan bahasa pemrograman yang berperan penting dalam membuat halaman web menjadi interaktif dan dinamis.
+* jQuery sebagai library dari JavaScript mampu menyederhanakan penulisan kode serta mempercepat proses pengembangan fitur pada sisi frontend.
+* Penggunaan JavaScript dan jQuery memungkinkan pengolahan data secara real-time tanpa perlu melakukan reload halaman.
+* Dalam implementasinya pada aplikasi inventori sederhana, kedua teknologi ini membantu meningkatkan pengalaman pengguna melalui interaksi yang lebih responsif.
+
+Dengan demikian, pemahaman terhadap JavaScript dan jQuery sangat penting dalam pengembangan aplikasi web modern, khususnya pada bagian frontend.
