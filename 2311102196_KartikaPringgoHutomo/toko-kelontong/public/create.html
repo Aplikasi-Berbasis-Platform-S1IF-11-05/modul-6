@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Produk - Toko Kelontong</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body { background: #f0f2f5; }
+        .card { border: none; border-radius: 12px; }
+        .form-control:focus { border-color: #0d6efd; box-shadow: 0 0 0 0.2rem rgba(13,110,253,.15); }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-dark bg-primary shadow-sm">
+    <div class="container">
+        <a href="index.html" class="navbar-brand">🛒 Toko Kelontong</a>
+    </div>
+</nav>
+
+<div class="container mt-4" style="max-width: 520px;">
+
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb" class="mb-3">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Data Produk</a></li>
+            <li class="breadcrumb-item active">Tambah Produk</li>
+        </ol>
+    </nav>
+
+    <!-- Alert -->
+    <div id="alertBox" class="alert d-none" role="alert"></div>
+
+    <div class="card shadow-sm">
+        <div class="card-header bg-white py-3">
+            <h5 class="mb-0 fw-bold text-success">➕ Tambah Produk Baru</h5>
+        </div>
+        <div class="card-body p-4">
+            <div id="formCreate">
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Nama Produk <span class="text-danger">*</span></label>
+                    <input type="text" id="nama" class="form-control" placeholder="Contoh: Beras 5kg" required>
+                    <div class="invalid-feedback">Nama produk wajib diisi.</div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Harga (Rp) <span class="text-danger">*</span></label>
+                    <div class="input-group">
+                        <span class="input-group-text">Rp</span>
+                        <input type="number" id="harga" class="form-control" placeholder="Contoh: 65000" min="0" required>
+                    </div>
+                    <div class="invalid-feedback">Harga wajib diisi dan harus berupa angka.</div>
+                </div>
+                <div class="mb-4">
+                    <label class="form-label fw-semibold">Stok <span class="text-danger">*</span></label>
+                    <input type="number" id="stok" class="form-control" placeholder="Contoh: 50" min="0" required>
+                    <div class="invalid-feedback">Stok wajib diisi dan harus berupa angka.</div>
+                </div>
+                <div class="d-flex gap-2">
+                    <a href="index.html" class="btn btn-secondary flex-fill">Batal</a>
+                    <button id="btnSimpan" class="btn btn-success flex-fill">
+                        <span id="saveSpinner" class="spinner-border spinner-border-sm d-none me-1"></span>
+                        💾 Simpan
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    function showAlert(type, msg) {
+        const box = $('#alertBox');
+        box.removeClass('d-none alert-success alert-danger').addClass(`alert-${type}`).text(msg);
+        if (type === 'danger') setTimeout(() => box.addClass('d-none'), 4000);
+    }
+
+    function validateForm() {
+        let valid = true;
+        const nama = $('#nama').val().trim();
+        const harga = $('#harga').val();
+        const stok = $('#stok').val();
+
+        $('#nama').toggleClass('is-invalid', !nama);
+        $('#harga').toggleClass('is-invalid', !harga || isNaN(harga) || parseFloat(harga) < 0);
+        $('#stok').toggleClass('is-invalid', !stok || isNaN(stok) || parseInt(stok) < 0);
+
+        if (!nama || !harga || !stok) valid = false;
+        return valid;
+    }
+
+    $('#btnSimpan').click(function() {
+        if (!validateForm()) return;
+
+        const data = {
+            nama: $('#nama').val().trim(),
+            harga: parseFloat($('#harga').val()),
+            stok: parseInt($('#stok').val())
+        };
+
+        $('#saveSpinner').removeClass('d-none');
+        $('#btnSimpan').prop('disabled', true);
+
+        $.ajax({
+            url: '/api/products',
+            type: 'POST',
+            data: JSON.stringify(data),
+            contentType: 'application/json',
+            success: function(res) {
+                showAlert('success', '✅ ' + (res.message || 'Produk berhasil ditambahkan!'));
+                setTimeout(() => window.location.href = 'index.html', 1200);
+            },
+            error: function(xhr) {
+                const msg = xhr.responseJSON?.message || 'Gagal menambahkan produk.';
+                showAlert('danger', '❌ ' + msg);
+            },
+            complete: function() {
+                $('#saveSpinner').addClass('d-none');
+                $('#btnSimpan').prop('disabled', false);
+            }
+        });
+    });
+
+    // Real-time validation clear
+    $('#nama, #harga, #stok').on('input', function() {
+        $(this).removeClass('is-invalid');
+    });
+</script>
+</body>
+</html>

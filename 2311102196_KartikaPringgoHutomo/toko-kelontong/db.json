@@ -1,0 +1,26 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "nama": "Beras 5kg",
+      "harga": 65000,
+      "stok": 50,
+      "createdAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "nama": "Minyak Goreng 1L",
+      "harga": 18000,
+      "stok": 30,
+      "createdAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 3,
+      "nama": "Gula Pasir 1kg",
+      "harga": 14000,
+      "stok": 40,
+      "createdAt": "2024-01-01T00:00:00.000Z"
+    }
+  ],
+  "nextId": 4
+}
