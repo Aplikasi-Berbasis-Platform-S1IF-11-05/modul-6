@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Toko Pak Cik & Aimar — Inventari</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <!-- DataTables Bootstrap5 -->
+  <link href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+  <!-- Custom CSS -->
+  <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <div class="brand-icon">🏪</div>
+      <div>
+        <div class="brand-title">Toko Pak Cik</div>
+        <div class="brand-sub">& Aimar</div>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a href="#" class="nav-link-side active" id="navDashboard">
+        <i class="bi bi-grid-1x2-fill"></i>
+        <span>Dashboard</span>
+      </a>
+      <a href="#" class="nav-link-side" id="navProduk">
+        <i class="bi bi-box-seam-fill"></i>
+        <span>Produk</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="user-card">
+        <div class="user-avatar">PC</div>
+        <div>
+          <div class="user-name">Pak Cik</div>
+          <div class="user-role">Administrator</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="main-content" id="mainContent">
+
+    <!-- Top Bar -->
+    <header class="topbar">
+      <div class="d-flex align-items-center gap-3">
+        <button class="btn-sidebar-toggle" id="sidebarToggle">
+          <i class="bi bi-list"></i>
+        </button>
+        <div>
+          <h1 class="page-title mb-0" id="pageTitle">Dashboard</h1>
+          <small class="text-muted" id="pageBreadcrumb">Selamat datang di sistem inventari</small>
+        </div>
+      </div>
+      <div class="d-flex align-items-center gap-2">
+        <span class="badge-live"><span class="live-dot"></span>Live Data</span>
+        <span class="topbar-date" id="topbarDate"></span>
+      </div>
+    </header>
+
+    <!-- ===== SECTION: DASHBOARD ===== -->
+    <section id="sectionDashboard" class="content-section">
+      <!-- Stats Cards -->
+      <div class="row g-4 mb-4">
+        <div class="col-xl-3 col-md-6">
+          <div class="stat-card stat-blue">
+            <div class="stat-icon"><i class="bi bi-box-seam"></i></div>
+            <div class="stat-info">
+              <div class="stat-value" id="statProduk">—</div>
+              <div class="stat-label">Total Produk</div>
+            </div>
+            <div class="stat-wave">〜</div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-md-6">
+          <div class="stat-card stat-green">
+            <div class="stat-icon"><i class="bi bi-stack"></i></div>
+            <div class="stat-info">
+              <div class="stat-value" id="statStok">—</div>
+              <div class="stat-label">Total Stok Unit</div>
+            </div>
+            <div class="stat-wave">〜</div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-md-6">
+          <div class="stat-card stat-orange">
+            <div class="stat-icon"><i class="bi bi-cash-coin"></i></div>
+            <div class="stat-info">
+              <div class="stat-value" id="statNilai">—</div>
+              <div class="stat-label">Total Nilai Inventaris</div>
+            </div>
+            <div class="stat-wave">〜</div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-md-6">
+          <div class="stat-card stat-red">
+            <div class="stat-icon"><i class="bi bi-exclamation-triangle"></i></div>
+            <div class="stat-info">
+              <div class="stat-value" id="statRendah">—</div>
+              <div class="stat-label">Stok Rendah (≤10)</div>
+            </div>
+            <div class="stat-wave">〜</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="row g-4">
+        <div class="col-lg-8">
+          <div class="card-custom">
+            <div class="card-custom-header">
+              <h6 class="mb-0"><i class="bi bi-clock-history me-2"></i>Produk Terbaru</h6>
+            </div>
+            <div class="card-custom-body p-0">
+              <table class="table table-hover mb-0" id="tableRecent">
+                <thead>
+                  <tr>
+                    <th>Nama Produk</th>
+                    <th>Kategori</th>
+                    <th>Stok</th>
+                    <th>Harga</th>
+                  </tr>
+                </thead>
+                <tbody id="bodyRecent">
+                  <tr><td colspan="4" class="text-center py-3 text-muted">Memuat data...</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card-custom h-100">
+            <div class="card-custom-header">
+              <h6 class="mb-0"><i class="bi bi-tags me-2"></i>Kategori Produk</h6>
+            </div>
+            <div class="card-custom-body" id="categoryList">
+              <div class="text-center text-muted">Memuat...</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION: PRODUK ===== -->
+    <section id="sectionProduk" class="content-section d-none">
+      <div class="card-custom">
+        <div class="card-custom-header d-flex justify-content-between align-items-center flex-wrap gap-2">
+          <h6 class="mb-0"><i class="bi bi-table me-2"></i>Daftar Produk</h6>
+          <div class="d-flex gap-2 flex-wrap">
+            <select class="form-select form-select-sm filter-select" id="filterKategori">
+              <option value="all">Semua Kategori</option>
+            </select>
+            <button class="btn-action btn-add" id="btnAddProduk">
+              <i class="bi bi-plus-lg me-1"></i>Tambah Produk
+            </button>
+          </div>
+        </div>
+        <div class="card-custom-body">
+          <div class="table-responsive">
+            <table class="table table-hover align-middle w-100" id="tableProduk">
+              <thead>
+                <tr>
+                  <th>No</th>
+                  <th>Nama Produk</th>
+                  <th>Kategori</th>
+                  <th>Stok</th>
+                  <th>Harga Satuan</th>
+                  <th>Nilai Total</th>
+                  <th>Keterangan</th>
+                  <th class="text-center">Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="bodyProduk">
+                <tr><td colspan="8" class="text-center py-4 text-muted">Memuat data...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== MODAL: CREATE / EDIT PRODUK ===== -->
+  <div class="modal fade" id="modalProduk" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content modal-custom">
+        <div class="modal-header modal-custom-header">
+          <h5 class="modal-title" id="modalProdukTitle">
+            <i class="bi bi-plus-circle me-2"></i>Tambah Produk
+          </h5>
+          <button type="button" class="btn-close-custom" data-bs-dismiss="modal">
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </div>
+        <div class="modal-body modal-custom-body">
+          <input type="hidden" id="editId" />
+          <div class="row g-3">
+            <div class="col-md-8">
+              <label class="form-label-custom">Nama Produk <span class="text-danger">*</span></label>
+              <input type="text" class="form-control form-control-custom" id="inputNama"
+                     placeholder="Contoh: Beras Premium 5kg" maxlength="100" />
+              <div class="invalid-feedback-custom" id="errNama"></div>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label-custom">Kategori <span class="text-danger">*</span></label>
+              <input type="text" class="form-control form-control-custom" id="inputKategori"
+                     placeholder="Contoh: Bahan Pokok" list="listKategori" />
+              <datalist id="listKategori"></datalist>
+              <div class="invalid-feedback-custom" id="errKategori"></div>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label-custom">Stok <span class="text-danger">*</span></label>
+              <input type="number" class="form-control form-control-custom" id="inputStok"
+                     placeholder="0" min="0" />
+              <div class="invalid-feedback-custom" id="errStok"></div>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label-custom">Harga Satuan (Rp) <span class="text-danger">*</span></label>
+              <input type="number" class="form-control form-control-custom" id="inputHarga"
+                     placeholder="0" min="0" />
+              <div class="invalid-feedback-custom" id="errHarga"></div>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label-custom">Satuan <span class="text-danger">*</span></label>
+              <input type="text" class="form-control form-control-custom" id="inputSatuan"
+                     placeholder="Contoh: Kg, Botol, Bungkus" list="listSatuan" />
+              <datalist id="listSatuan">
+                <option value="Kg">
+                <option value="Gram">
+                <option value="Liter">
+                <option value="Botol">
+                <option value="Bungkus">
+                <option value="Sachet">
+                <option value="Batang">
+                <option value="Buah">
+                <option value="Karung">
+                <option value="Galon">
+                <option value="Pcs">
+              </datalist>
+              <div class="invalid-feedback-custom" id="errSatuan"></div>
+            </div>
+            <div class="col-12">
+              <label class="form-label-custom">Keterangan</label>
+              <textarea class="form-control form-control-custom" id="inputKeterangan"
+                        rows="2" placeholder="Deskripsi singkat produk (opsional)" maxlength="200"></textarea>
+            </div>
+          </div>
+          <!-- Preview harga total -->
+          <div class="preview-total mt-3" id="previewTotal">
+            <i class="bi bi-calculator me-2"></i>
+            Nilai inventaris: <strong id="previewTotalVal">Rp 0</strong>
+          </div>
+        </div>
+        <div class="modal-footer modal-custom-footer">
+          <button type="button" class="btn-cancel" data-bs-dismiss="modal">
+            <i class="bi bi-x me-1"></i>Batal
+          </button>
+          <button type="button" class="btn-save" id="btnSaveProduk">
+            <i class="bi bi-check-lg me-1"></i>Simpan Produk
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== MODAL: DELETE KONFIRMASI ===== -->
+  <div class="modal fade" id="modalDelete" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content modal-custom modal-delete">
+        <div class="modal-header border-0 pb-0">
+          <button type="button" class="btn-close-custom" data-bs-dismiss="modal">
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </div>
+        <div class="modal-body text-center px-4 pb-2">
+          <div class="delete-icon-wrap">
+            <i class="bi bi-trash3-fill"></i>
+          </div>
+          <h5 class="delete-title mt-3">Hapus Produk?</h5>
+          <p class="delete-subtitle">
+            Kamu yakin ingin menghapus produk
+            <strong id="deleteNama" class="delete-product-name">"..."</strong>?
+          </p>
+          <div class="alert delete-alert" role="alert">
+            <i class="bi bi-exclamation-triangle-fill me-2"></i>
+            Tindakan ini tidak bisa dibatalkan dan data akan hilang permanen dari file JSON.
+          </div>
+        </div>
+        <div class="modal-footer modal-custom-footer justify-content-center gap-3">
+          <button type="button" class="btn-cancel" data-bs-dismiss="modal">
+            <i class="bi bi-arrow-left me-1"></i>Batalkan
+          </button>
+          <button type="button" class="btn-danger-custom" id="btnConfirmDelete">
+            <i class="bi bi-trash3 me-1"></i>Ya, Hapus Sekarang
+          </button>
+        </div>
+        <input type="hidden" id="deleteId" />
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== TOAST NOTIFIKASI ===== -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index:9999;">
+    <div id="toastNotif" class="toast toast-custom align-items-center border-0" role="alert">
+      <div class="d-flex">
+        <div class="toast-body" id="toastBody">
+          <i class="bi bi-check-circle-fill me-2 toast-icon"></i>
+          <span id="toastMsg">Berhasil!</span>
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== LOADING OVERLAY ===== -->
+  <div class="loading-overlay d-none" id="loadingOverlay">
+    <div class="loading-spinner">
+      <div class="spinner-ring"></div>
+      <div class="loading-text">Memproses...</div>
+    </div>
+  </div>
+
+  <!-- jQuery -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- DataTables -->
+  <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+  <!-- App JS -->
+  <script src="js/app.js"></script>
+</body>
+</html>

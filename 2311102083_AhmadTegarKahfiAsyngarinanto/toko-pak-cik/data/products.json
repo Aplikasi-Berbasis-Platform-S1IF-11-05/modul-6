@@ -1,0 +1,92 @@
+[
+  {
+    "id": "prod-001",
+    "nama": "Beras Premium 5kg",
+    "kategori": "Bahan Pokok",
+    "stok": 50,
+    "harga": 75000,
+    "satuan": "Karung",
+    "keterangan": "Beras pulen kualitas premium",
+    "createdAt": "2026-01-15T08:00:00.000Z"
+  },
+  {
+    "id": "prod-002",
+    "nama": "Minyak Goreng 2L",
+    "kategori": "Bahan Pokok",
+    "stok": 30,
+    "harga": 32000,
+    "satuan": "Botol",
+    "keterangan": "Minyak goreng kemasan botol",
+    "createdAt": "2026-01-15T08:05:00.000Z"
+  },
+  {
+    "id": "prod-003",
+    "nama": "Indomie Goreng",
+    "kategori": "Mie & Pasta",
+    "stok": 120,
+    "harga": 3500,
+    "satuan": "Bungkus",
+    "keterangan": "Indomie goreng rasa original",
+    "createdAt": "2026-01-15T08:10:00.000Z"
+  },
+  {
+    "id": "prod-004",
+    "nama": "Gula Pasir 1kg",
+    "kategori": "Bahan Pokok",
+    "stok": 40,
+    "harga": 17000,
+    "satuan": "Kg",
+    "keterangan": "Gula pasir putih bersih",
+    "createdAt": "2026-01-15T08:15:00.000Z"
+  },
+  {
+    "id": "prod-005",
+    "nama": "Sabun Mandi Lifebuoy",
+    "kategori": "Kebersihan",
+    "stok": 60,
+    "harga": 5500,
+    "satuan": "Batang",
+    "keterangan": "Sabun antibakteri",
+    "createdAt": "2026-01-15T08:20:00.000Z"
+  },
+  {
+    "id": "prod-006",
+    "nama": "Aqua Galon",
+    "kategori": "Minuman",
+    "stok": 15,
+    "harga": 22000,
+    "satuan": "Galon",
+    "keterangan": "Air mineral galon isi ulang",
+    "createdAt": "2026-01-15T08:25:00.000Z"
+  },
+  {
+    "id": "prod-007",
+    "nama": "Kopi Kapal Api",
+    "kategori": "Minuman",
+    "stok": 80,
+    "harga": 2500,
+    "satuan": "Sachet",
+    "keterangan": "Kopi hitam sachet",
+    "createdAt": "2026-01-15T08:30:00.000Z"
+  },
+  {
+    "id": "prod-008",
+    "nama": "Teh Botol Sosro",
+    "kategori": "Minuman",
+    "stok": 48,
+    "harga": 6000,
+    "satuan": "Botol",
+    "keterangan": "Teh manis botol kaca",
+    "createdAt": "2026-01-15T08:35:00.000Z"
+  },
+  {
+    "id": "prod-b231895e",
+    "nama": "beras",
+    "kategori": "Bahan Pokok",
+    "stok": 45,
+    "harga": 45,
+    "satuan": "Kg",
+    "keterangan": "Beras Boraks",
+    "createdAt": "2026-04-07T13:52:23.500Z"
+  }
+]
