@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "name": "Beras 5kg",
+        "category": "Sembako",
+        "stock": 50,
+        "price": 65000
+    },
+    {
+        "id": 2,
+        "name": "Minyak Goreng 2L",
+        "category": "Sembako",
+        "stock": 30,
+        "price": 38000
+    },
+    {
+        "id": 3,
+        "name": "Susu UHT",
+        "category": "Minuman",
+        "stock": 10,
+        "price": 5000
+    },
+    {
+        "id": 4,
+        "name": "Test",
+        "category": "Minuman",
+        "stock": 122333,
+        "price": 24
+    }
+]
