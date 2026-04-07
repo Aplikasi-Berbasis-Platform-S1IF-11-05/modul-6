@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "nama": "Beras 5 Kg",
+        "kategori": "Sembako",
+        "harga": 75000,
+        "stok": 10
+    },
+    {
+        "id": 2,
+        "nama": "Minyak Goreng 1L",
+        "kategori": "Sembako",
+        "harga": 18000,
+        "stok": 25
+    },
+    {
+        "id": 3,
+        "nama": "Gula Pasir 1 Kg",
+        "kategori": "Sembako",
+        "harga": 16000,
+        "stok": 8
+    }
+]
