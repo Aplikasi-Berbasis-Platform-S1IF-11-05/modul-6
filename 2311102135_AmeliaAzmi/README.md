@@ -54,18 +54,9 @@ Dalam pengembangan web, HTML digunakan sebagai struktur, CSS sebagai tampilan, d
 
 ---
 
-
-# Tugas 6
-## 1. Source Kode (Menggunakan Laravel)
-
-
-# 📘 Aplikasi Inventori Toko Kelontong 
-
-
-
-## ROUTES (routes/web.php)
-
-```php
+🧪 Tugas 6
+📌 Aplikasi Inventori Toko Kelontong
+🔧 ROUTES (routes/web.php)
 <?php
 
 use Illuminate\Support\Facades\Route;
@@ -75,15 +66,7 @@ Route::get('/', [ProductController::class, 'index']);
 Route::post('/store', [ProductController::class, 'store']);
 Route::post('/update/{id}', [ProductController::class, 'update']);
 Route::delete('/delete/{id}', [ProductController::class, 'delete']);
-```
-
----
-
----
-
-## VIEW (resources/views/products/index.blade.php)
-
-```html
+🎨 VIEW (index.blade.php)
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -116,7 +99,6 @@ body {
 
 <h2 class="text-center mb-4">⚡ Cyber Store</h2>
 
-<!-- FORM TAMBAH -->
 <div class="card p-4 mb-4">
 <form method="POST" action="/store">
 @csrf
@@ -127,9 +109,8 @@ body {
 </form>
 </div>
 
-<!-- TABLE -->
 <div class="card p-4">
-<table class="table table-dark text-center align-middle">
+<table class="table table-dark text-center">
 <thead>
 <tr>
 <th>Nama</th>
@@ -147,16 +128,7 @@ body {
 <td>{{ $i['stok'] }}</td>
 <td>
 
-<button 
-class="btn btn-info editBtn"
-data-id="{{ $i['id'] }}"
-data-nama="{{ $i['nama'] }}"
-data-harga="{{ $i['harga'] }}"
-data-stok="{{ $i['stok'] }}">
-Edit
-</button>
-
-<form method="POST" action="/delete/{{ $i['id'] }}" style="display:inline;">
+<form method="POST" action="/delete/{{ $i['id'] }}">
 @csrf
 @method('DELETE')
 <button class="btn btn-danger">Hapus</button>
@@ -171,53 +143,9 @@ Edit
 
 </div>
 
-<!-- MODAL EDIT -->
-<div class="modal fade" id="editModal">
-<div class="modal-dialog">
-<div class="modal-content p-3">
-
-<form method="POST" id="editForm">
-@csrf
-
-<input name="nama" id="editNama" class="form-control mb-2">
-<input name="harga" id="editHarga" class="form-control mb-2">
-<input name="stok" id="editStok" class="form-control mb-2">
-
-<button class="btn btn-main w-100">Update</button>
-</form>
-
-</div>
-</div>
-</div>
-
-<script>
-$(document).ready(function(){
-
-$('.editBtn').click(function(){
-
-$('#editNama').val($(this).data('nama'));
-$('#editHarga').val($(this).data('harga'));
-$('#editStok').val($(this).data('stok'));
-
-$('#editForm').attr('action','/update/'+$(this).data('id'));
-
-$('#editModal').modal('show');
-
-});
-
-});
-</script>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>
-
----
-
-## 3. Source Kode (ProductController)
-
----
+⚙️ CONTROLLER (ProductController.php)
 <?php
 
 namespace App\Http\Controllers;
@@ -228,7 +156,6 @@ class ProductController extends Controller
 {
     private $file = 'products.json';
 
-    // READ JSON
     private function read()
     {
         $path = storage_path('app/' . $this->file);
@@ -240,15 +167,12 @@ class ProductController extends Controller
         return json_decode(file_get_contents($path), true);
     }
 
-    // WRITE JSON
     private function write($data)
     {
         $path = storage_path('app/' . $this->file);
-
         file_put_contents($path, json_encode($data, JSON_PRETTY_PRINT));
     }
 
-    // TAMPIL DATA
     public function index()
     {
         return view('products.index', [
@@ -256,79 +180,44 @@ class ProductController extends Controller
         ]);
     }
 
-    // TAMBAH DATA
     public function store(Request $request)
     {
-        $request->validate([
-            'nama' => 'required',
-            'harga' => 'required|numeric',
-            'stok' => 'required|numeric'
-        ]);
-
         $data = $this->read();
 
         $data[] = [
-            'id'    => uniqid(),
-            'nama'  => $request->nama,
+            'id' => uniqid(),
+            'nama' => $request->nama,
             'harga' => $request->harga,
-            'stok'  => $request->stok
+            'stok' => $request->stok
         ];
 
         $this->write($data);
-
         return back();
     }
 
-    // UPDATE DATA
-    public function update(Request $request, $id)
-    {
-        $request->validate([
-            'nama' => 'required',
-            'harga' => 'required|numeric',
-            'stok' => 'required|numeric'
-        ]);
-
-        $data = $this->read();
-
-        foreach ($data as &$item) {
-            if ($item['id'] == $id) {
-                $item['nama']  = $request->nama;
-                $item['harga'] = $request->harga;
-                $item['stok']  = $request->stok;
-            }
-        }
-
-        $this->write($data);
-
-        return back();
-    }
-
-    // DELETE DATA
     public function delete($id)
     {
-        $data = array_filter($this->read(), function ($item) use ($id) {
-            return $item['id'] != $id;
-        });
-
+        $data = array_filter($this->read(), fn($item) => $item['id'] != $id);
         $this->write(array_values($data));
-
         return back();
     }
 }
----
+📌 Penjelasan
 
-Output:
-Tampilan Hasil
+Aplikasi ini merupakan sistem inventori sederhana berbasis Laravel.
+
+Fitur:
+Tambah produk
+Hapus produk
+Data disimpan dalam JSON
+Teknologi:
+Laravel
+Bootstrap
+JavaScript & jQuery
+✅ Output
+
+Menampilkan daftar produk dan CRUD sederhana.
 
 
-# Penjelasan
 
-## 📌 Deskripsi Project
 
-Program ini merupakan aplikasi web sederhana berbasis Laravel yang digunakan untuk mengelola produk digital pada sebuah Cyber Store. Produk yang dikelola meliputi pulsa, paket data, voucher game, serta layanan digital lainnya.
-
-Berbeda dengan aplikasi inventori konvensional, sistem ini tidak menggunakan database, melainkan memanfaatkan file JSON sebagai media penyimpanan data. Hal ini membuat aplikasi lebih ringan dan mudah dikembangkan untuk kebutuhan pembelajaran.
-
-Tujuan utama dari program ini adalah untuk memahami konsep dasar pengembangan aplikasi web, khususnya dalam mengelola data menggunakan metode CRUD (Create, Read, Update, Delete).
-
-Selain itu, program ini juga bertujuan untuk mengimplementasikan penggunaan Laravel sebagai backend framework, Bootstrap sebagai tampilan antarmuka, serta JavaScript dan jQuery untuk menangani interaksi pengguna.
