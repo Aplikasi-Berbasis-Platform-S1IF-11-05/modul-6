@@ -1,0 +1,17 @@
+[
+  {
+    "nama": "Indomie",
+    "harga": 3000,
+    "stok": 50
+  },
+  {
+    "nama": "Mie Sedaap",
+    "harga": 3500,
+    "stok": 30
+  },
+  {
+    "nama": "Teh Pucuk",
+    "harga": 5000,
+    "stok": 25
+  }
+]
