@@ -1,20 +1,34 @@
-$(document).ready(load);
+let deleteId = null;
+
+$(document).ready(function () {
+  load();
+});
 
 function load() {
   $.get('/api/products', data => {
     let html = '';
-    data.forEach(d => {
-      html += `
+
+    if (data.length === 0) {
+      html = `
         <tr>
-          <td>${d.name}</td>
-          <td>${d.price}</td>
-          <td>
-            <button onclick="edit(${d.id}, '${d.name}', ${d.price})">Edit</button>
-            <button onclick="del(${d.id})">Hapus</button>
-          </td>
+          <td colspan="3" class="text-muted">Belum ada produk</td>
         </tr>
       `;
-    });
+    } else {
+      data.forEach(d => {
+        html += `
+          <tr>
+            <td class="fw-semibold">${d.name}</td>
+            <td>Rp ${d.price}</td>
+            <td>
+              <button class="btn btn-warning btn-sm" onclick="edit(${d.id}, '${d.name}', ${d.price})">Edit</button>
+              <button class="btn btn-danger btn-sm" onclick="showDelete(${d.id})">Hapus</button>
+            </td>
+          </tr>
+        `;
+      });
+    }
+
     $('#table').html(html);
   });
 }
@@ -26,25 +40,24 @@ function save() {
     price: $('#price').val()
   };
 
-  if (id) {
-    $.ajax({
-      url: '/api/products/' + id,
-      method: 'PUT',
-      contentType: 'application/json',
-      data: JSON.stringify(data),
-      success: load
-    });
-  } else {
-    $.ajax({
-      url: '/api/products',
-      method: 'POST',
-      contentType: 'application/json',
-      data: JSON.stringify(data),
-      success: load
-    });
+  if (!data.name || !data.price) {
+    alert("Isi semua field!");
+    return;
   }
 
-  $('.modal').modal('hide');
+  const method = id ? 'PUT' : 'POST';
+  const url = id ? '/api/products/' + id : '/api/products';
+
+  $.ajax({
+    url: url,
+    method: method,
+    contentType: 'application/json',
+    data: JSON.stringify(data),
+    success: () => {
+      load();
+      $('.modal').modal('hide');
+    }
+  });
 }
 
 function edit(id, name, price) {
@@ -54,10 +67,18 @@ function edit(id, name, price) {
   $('#formModal').modal('show');
 }
 
-function del(id) {
-  $.ajax({
-    url: '/api/products/' + id,
-    method: 'DELETE',
-    success: load
-  });
+function showDelete(id) {
+  deleteId = id;
+  $('#deleteModal').modal('show');
 }
+
+$('#confirmDelete').click(function () {
+  $.ajax({
+    url: '/api/products/' + deleteId,
+    method: 'DELETE',
+    success: () => {
+      load();
+      $('#deleteModal').modal('hide');
+    }
+  });
+});
