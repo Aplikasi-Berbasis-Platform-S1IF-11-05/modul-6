@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sistem Inventori Toko Kelontong Pak Cik dan Aimar - Kelola produk toko dengan mudah">
+    <title>Toko Kelontong Pak Cik & Aimar - Sistem Inventori</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- DataTables CSS -->
+    <link href="https://cdn.datatables.net/1.13.8/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ============ NAVBAR ============ -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" id="mainNavbar">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="/">
+                <div class="brand-icon me-2">
+                    <i class="bi bi-shop"></i>
+                </div>
+                <div>
+                    <span class="fw-bold">Toko Kelontong</span>
+                    <small class="d-block text-light opacity-75" style="font-size: 0.7rem; margin-top: -3px;">Pak Cik & Aimar</small>
+                </div>
+            </a>
+            <div class="d-flex align-items-center">
+                <span class="badge bg-light text-dark px-3 py-2">
+                    <i class="bi bi-clock me-1"></i>
+                    <span id="currentTime"></span>
+                </span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============ HERO / STATS SECTION ============ -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-12">
+                    <h1 class="hero-title">
+                        <i class="bi bi-box-seam-fill me-2"></i>Sistem Inventori Produk
+                    </h1>
+                    <p class="hero-subtitle">Kelola stok dan produk toko kelontong Pak Cik & Aimar dengan mudah dan efisien</p>
+                </div>
+            </div>
+            <div class="row g-3" id="statsRow">
+                <div class="col-6 col-md-3">
+                    <div class="stat-card">
+                        <div class="stat-icon bg-primary bg-opacity-10">
+                            <i class="bi bi-box-seam text-primary"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="totalProducts">0</span>
+                            <span class="stat-label">Total Produk</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-card">
+                        <div class="stat-icon bg-success bg-opacity-10">
+                            <i class="bi bi-tags text-success"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="totalCategories">0</span>
+                            <span class="stat-label">Kategori</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-card">
+                        <div class="stat-icon bg-warning bg-opacity-10">
+                            <i class="bi bi-archive text-warning"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="totalStock">0</span>
+                            <span class="stat-label">Total Stok</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-card">
+                        <div class="stat-icon bg-info bg-opacity-10">
+                            <i class="bi bi-cash-stack text-info"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="totalValue">Rp 0</span>
+                            <span class="stat-label">Nilai Inventori</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ MAIN CONTENT ============ -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Toolbar -->
+            <div class="toolbar-card">
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+                    <div>
+                        <h5 class="mb-0 fw-bold"><i class="bi bi-list-ul me-2"></i>Daftar Produk</h5>
+                        <small class="text-muted">Kelola semua produk toko</small>
+                    </div>
+                    <button class="btn btn-add-product" id="btnAddProduct">
+                        <i class="bi bi-plus-lg me-2"></i>Tambah Produk
+                    </button>
+                </div>
+            </div>
+
+            <!-- Data Table -->
+            <div class="table-card">
+                <div class="table-responsive">
+                    <table id="productsTable" class="table table-hover align-middle mb-0" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th class="text-center" style="width: 50px;">No</th>
+                                <th>Nama Produk</th>
+                                <th>Kategori</th>
+                                <th class="text-end">Harga</th>
+                                <th class="text-center">Stok</th>
+                                <th>Deskripsi</th>
+                                <th class="text-center" style="width: 140px;">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="productsTableBody">
+                            <!-- Data akan di-render oleh jQuery -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ============ MODAL: CREATE / EDIT PRODUK ============ -->
+    <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content custom-modal">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel">
+                        <i class="bi bi-plus-circle me-2"></i>Tambah Produk Baru
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="productForm">
+                        <input type="hidden" id="productId">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="productName" placeholder="Nama Produk" required>
+                                    <label for="productName"><i class="bi bi-box me-1"></i>Nama Produk</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <select class="form-select" id="productCategory" required>
+                                        <option value="">Pilih Kategori</option>
+                                        <option value="Makanan">Makanan</option>
+                                        <option value="Minuman">Minuman</option>
+                                        <option value="Sembako">Sembako</option>
+                                        <option value="Perlengkapan Mandi">Perlengkapan Mandi</option>
+                                        <option value="Kebutuhan Rumah">Kebutuhan Rumah</option>
+                                        <option value="Snack">Snack</option>
+                                        <option value="Obat-obatan">Obat-obatan</option>
+                                        <option value="Lainnya">Lainnya</option>
+                                    </select>
+                                    <label for="productCategory"><i class="bi bi-tag me-1"></i>Kategori</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="number" class="form-control" id="productPrice" placeholder="Harga" min="0" step="500" required>
+                                    <label for="productPrice"><i class="bi bi-cash me-1"></i>Harga (Rp)</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="number" class="form-control" id="productStock" placeholder="Stok" min="0" required>
+                                    <label for="productStock"><i class="bi bi-archive me-1"></i>Stok</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <textarea class="form-control" id="productDescription" placeholder="Deskripsi" style="height: 100px"></textarea>
+                                    <label for="productDescription"><i class="bi bi-card-text me-1"></i>Deskripsi (opsional)</label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                        <i class="bi bi-x-lg me-1"></i>Batal
+                    </button>
+                    <button type="button" class="btn btn-save" id="btnSaveProduct">
+                        <i class="bi bi-check-lg me-1"></i>Simpan Produk
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ MODAL: DELETE CONFIRMATION ============ -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content custom-modal delete-modal">
+                <div class="modal-header border-0 pb-0">
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center py-4">
+                    <div class="delete-icon-wrapper mb-3">
+                        <i class="bi bi-exclamation-triangle-fill"></i>
+                    </div>
+                    <h4 class="fw-bold mb-2">Hapus Produk?</h4>
+                    <p class="text-muted mb-1">Anda akan menghapus produk:</p>
+                    <p class="fw-semibold text-light fs-5" id="deleteProductName">-</p>
+                    <p class="text-muted small">Tindakan ini tidak dapat dibatalkan.</p>
+                    <input type="hidden" id="deleteProductId">
+                </div>
+                <div class="modal-footer border-0 justify-content-center pb-4">
+                    <button type="button" class="btn btn-outline-secondary px-4" data-bs-dismiss="modal">
+                        <i class="bi bi-x-lg me-1"></i>Batal
+                    </button>
+                    <button type="button" class="btn btn-danger px-4" id="btnConfirmDelete">
+                        <i class="bi bi-trash me-1"></i>Ya, Hapus
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ TOAST NOTIFICATION ============ -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="notifToast" class="toast align-items-center border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body d-flex align-items-center gap-2">
+                    <i class="bi" id="toastIcon"></i>
+                    <span id="toastMessage"></span>
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer-section">
+        <div class="container text-center">
+            <p class="mb-1">
+                <i class="bi bi-shop me-1"></i>
+                <strong>Toko Kelontong Pak Cik & Aimar</strong>
+            </p>
+            <small class="text-muted">&copy; 2026 - Sistem Inventori Produk | Dibuat dengan <i class="bi bi-heart-fill text-danger"></i> menggunakan Flask, Bootstrap & jQuery</small>
+        </div>
+    </footer>
+
+    <!-- ============ SCRIPTS ============ -->
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- DataTables JS -->
+    <script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.8/js/dataTables.bootstrap5.min.js"></script>
+    <!-- Custom JS -->
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

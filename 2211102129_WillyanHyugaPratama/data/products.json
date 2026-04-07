@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "nama": "Indomie Goreng",
+    "kategori": "Makanan",
+    "harga": 3500,
+    "stok": 150,
+    "deskripsi": "Mie instan goreng rasa original, favorit semua kalangan",
+    "created_at": "2026-04-07 10:00:00",
+    "updated_at": "2026-04-07 10:00:00"
+  },
+  {
+    "id": 2,
+    "nama": "Teh Botol Sosro 450ml",
+    "kategori": "Minuman",
+    "harga": 5000,
+    "stok": 80,
+    "deskripsi": "Teh manis dalam kemasan botol plastik",
+    "created_at": "2026-04-07 10:00:00",
+    "updated_at": "2026-04-07 10:00:00"
+  },
+  {
+    "id": 3,
+    "nama": "Sabun Lifebuoy",
+    "kategori": "Perlengkapan Mandi",
+    "harga": 4500,
+    "stok": 45,
+    "deskripsi": "Sabun mandi batang antibakteri",
+    "created_at": "2026-04-07 10:00:00",
+    "updated_at": "2026-04-07 10:00:00"
+  },
+  {
+    "id": 4,
+    "nama": "Beras 5kg Premium",
+    "kategori": "Sembako",
+    "harga": 72000,
+    "stok": 30,
+    "deskripsi": "Beras putih premium kualitas terbaik",
+    "created_at": "2026-04-07 10:00:00",
+    "updated_at": "2026-04-07 10:00:00"
+  },
+  {
+    "id": 5,
+    "nama": "Minyak Goreng Bimoli 1L",
+    "kategori": "Sembako",
+    "harga": 18000,
+    "stok": 25,
+    "deskripsi": "Minyak goreng sawit kemasan 1 liter",
+    "created_at": "2026-04-07 10:00:00",
+    "updated_at": "2026-04-07 10:00:00"
+  },
+  {
+    "id": 6,
+    "nama": "Aqua 600ml",
+    "kategori": "Minuman",
+    "harga": 4000,
+    "stok": 200,
+    "deskripsi": "Air mineral dalam kemasan botol 600ml",
+    "created_at": "2026-04-07 10:00:00",
+    "updated_at": "2026-04-07 10:00:00"
+  },
+  {
+    "id": 7,
+    "nama": "Deterjen Rinso 800g",
+    "kategori": "Kebutuhan Rumah",
+    "harga": 15000,
+    "stok": 35,
+    "deskripsi": "Deterjen bubuk untuk mencuci pakaian",
+    "created_at": "2026-04-07 10:00:00",
+    "updated_at": "2026-04-07 10:00:00"
+  },
+  {
+    "id": 8,
+    "nama": "Gula Pasir 1kg",
+    "kategori": "Sembako",
+    "harga": 16000,
+    "stok": 40,
+    "deskripsi": "Gula pasir putih kemasan 1 kilogram",
+    "created_at": "2026-04-07 10:00:00",
+    "updated_at": "2026-04-07 10:00:00"
+  },
+  {
+    "id": 9,
+    "nama": "Kopi Kapal Api 65g",
+    "kategori": "Minuman",
+    "harga": 2500,
+    "stok": 100,
+    "deskripsi": "Kopi bubuk hitam sachet",
+    "created_at": "2026-04-07 10:00:00",
+    "updated_at": "2026-04-07 10:00:00"
+  },
+  {
+    "id": 10,
+    "nama": "Telur Ayam 1kg",
+    "kategori": "Sembako",
+    "harga": 28000,
+    "stok": 20,
+    "deskripsi": "Telur ayam negeri segar per kilogram",
+    "created_at": "2026-04-07 10:00:00",
+    "updated_at": "2026-04-07 10:00:00"
+  }
+]
