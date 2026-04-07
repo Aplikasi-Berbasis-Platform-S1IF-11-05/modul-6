@@ -1,0 +1,16 @@
+[
+    {
+        "name": "beras",
+        "category": "Sembako",
+        "price": 122222,
+        "stock": 34,
+        "id": 1
+    },
+    {
+        "name": "adadw",
+        "category": "Minuman",
+        "price": 123142,
+        "stock": 2142,
+        "id": 2
+    }
+]
