@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Toko Kelontong</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+</head>
+<body class="container mt-4">
+
+<h2>Data Produk Toko Kelontong</h2>
+<a href="create.html" class="btn btn-primary mb-3">Tambah</a>
+
+<table id="table" class="table">
+    <thead>
+        <tr>
+            <th>Nama</th>
+            <th>Harga</th>
+            <th>Stok</th>
+            <th>Aksi</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<!-- Modal Delete -->
+<div class="modal fade" id="deleteModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content p-3">
+
+        <h5 class="mb-3">Yakin hapus?</h5>
+
+        <div class="d-flex justify-content-end gap-2">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">
+                Batal
+            </button>
+            <button id="confirmDelete" class="btn btn-danger">
+                Hapus
+            </button>
+        </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- JS -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+
+<!-- WAJIB -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
