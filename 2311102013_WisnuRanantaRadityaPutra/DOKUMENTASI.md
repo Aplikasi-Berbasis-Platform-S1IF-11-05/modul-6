@@ -54,7 +54,7 @@ git clone nama-file
 ```
 3. install modul 
 ```text
-npm install
+npm install express
 ```
 4. Jalankan server
 ```
