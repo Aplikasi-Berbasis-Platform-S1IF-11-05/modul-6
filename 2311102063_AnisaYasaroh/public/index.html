@@ -1,0 +1,135 @@
+<!-- 2311102063
+Anisa Yasaroh
+IF-11-REG05 -->
+
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toko Kelontong Pak Cik & Aimar</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <style>
+    body {
+      background: linear-gradient(135deg, #6f4e37, #a67c52);
+      min-height: 100vh;
+    }
+
+    .main-card {
+      border: none;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .header-box {
+      background: linear-gradient(135deg, #5c4033, #8b5e3c);
+      color: white;
+      border-radius: 20px;
+      padding: 24px;
+    }
+
+    #alertBox {
+      font-weight: 500;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container py-5">
+
+    <div class="header-box mb-4">
+      <h2 class="fw-bold mb-1">Toko Kelontong Pak Cik & Aimar</h2>
+      <p class="mb-0">Manajemen inventaris produk sederhana</p>
+    </div>
+
+    <div id="alertBox" class="alert alert-dark text-center d-none rounded-4 mb-4"></div>
+
+    <div class="card main-card p-4">
+
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h4 class="fw-semibold mb-0">Daftar Produk</h4>
+
+        <button id="btnTambah" class="btn btn-dark rounded-pill px-4" data-bs-toggle="modal"
+          data-bs-target="#productModal">
+          + Tambah Produk
+        </button>
+      </div>
+
+      <table id="productTable" class="table table-hover align-middle">
+        <thead class="table-dark">
+          <tr>
+            <th>Nama</th>
+            <th>Harga</th>
+            <th>Stok</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+    </div>
+  </div>
+
+  <div class="modal fade" id="productModal">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+      <div class="modal-content rounded-4">
+
+        <div class="modal-header border-0">
+          <h5 class="modal-title" id="modalTitle">Tambah Produk</h5>
+          <button class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <div class="modal-body">
+          <form id="productForm">
+
+            <input type="hidden" id="editIndex">
+
+            <input type="text" id="nama" class="form-control mb-3" placeholder="Nama Produk" required>
+            <input type="number" id="harga" class="form-control mb-3" placeholder="Harga" required>
+            <input type="number" id="stok" class="form-control mb-3" placeholder="Stok" required>
+
+            <button id="submitBtn" class="btn btn-dark w-100 rounded-pill">Simpan</button>
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="deleteModal">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-4">
+
+        <div class="modal-header border-0">
+          <h5 class="modal-title">Konfirmasi Hapus</h5>
+          <button class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <div class="modal-body">
+          Yakin ingin menghapus produk ini?
+        </div>
+
+        <div class="modal-footer border-0">
+          <button class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+          <button id="confirmDelete" class="btn btn-danger">Hapus</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
