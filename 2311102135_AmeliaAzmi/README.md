@@ -91,6 +91,7 @@ body {
 
 </body>
 </html>
+---
 
 
 ---
@@ -99,6 +100,8 @@ Hasil:
 <img width="1920" height="1080" alt="cyber" src="https://github.com/user-attachments/assets/beb627c4-e153-4025-8e7d-8988a2bd2dee" />
 
 ---
+---
+
 # 📝 Kesimpulan
 
 Berdasarkan praktikum yang telah dilakukan pada Modul 6 mengenai **JavaScript dan jQuery**, dapat disimpulkan bahwa:
