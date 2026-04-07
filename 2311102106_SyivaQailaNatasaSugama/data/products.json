@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "name": "Beras Premium 5kg",
+        "price": 75000,
+        "stock": 20,
+        "category": "Sembako"
+    },
+    {
+        "id": 2,
+        "name": "Minyak Goreng 2L",
+        "price": 35000,
+        "stock": 15,
+        "category": "Sembako"
+    },
+    {
+        "id": 3,
+        "name": "Gula Pasir 1kg",
+        "price": 16000,
+        "stock": 50,
+        "category": "Sembako"
+    }
+]

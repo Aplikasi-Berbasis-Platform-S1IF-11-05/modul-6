@@ -1,0 +1,144 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row mb-4 align-items-center">
+        <div class="col">
+            <h2 class="fw-bold text-dark m-0">Inventaris Produk</h2>
+            <p class="text-secondary small">Kelola stok barang Pak Cik dan Aimar</p>
+        </div>
+        <div class="col-auto">
+            <button class="btn btn-primary-premium px-4 py-2 rounded-pill" data-bs-toggle="modal" data-bs-target="#addModal">
+                <i class="fas fa-plus me-2"></i> Tambah Produk
+            </button>
+        </div>
+    </div>
+
+    <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0" id="productTable">
+                    <thead class="bg-light text-secondary small text-uppercase fw-semibold">
+                        <tr>
+                            <th class="ps-4 py-3" style="width: 60px;">No</th>
+                            <th class="py-3">Nama Produk</th>
+                            <th class="py-3">Kategori</th>
+                            <th class="py-3">Harga</th>
+                            <th class="py-3">Stok</th>
+                            <th class="text-end pe-4 py-3">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="productTableBody">
+                        <!-- Data will be loaded via jQuery -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add Product Modal -->
+<div class="modal fade" id="addModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow rounded-4">
+            <div class="modal-header border-0 pb-0">
+                <h5 class="modal-title fw-bold">Tambah Produk Baru</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body py-4">
+                <form id="addForm">
+                    <div class="mb-3">
+                        <label class="form-label text-secondary small fw-bold">Nama Produk</label>
+                        <input type="text" class="form-control rounded-3" name="name" required placeholder="Contoh: Beras Premium">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label text-secondary small fw-bold">Kategori</label>
+                        <select class="form-select rounded-3" name="category" required>
+                            <option value="">Pilih Kategori</option>
+                            <option value="Sembako">Sembako</option>
+                            <option value="Minuman">Minuman</option>
+                            <option value="Makanan Ringan">Makanan Ringan</option>
+                            <option value="Lainnya">Lainnya</option>
+                        </select>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label text-secondary small fw-bold">Harga (Rp)</label>
+                            <input type="number" class="form-control rounded-3" name="price" required placeholder="0">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label text-secondary small fw-bold">Stok</label>
+                            <input type="number" class="form-control rounded-3" name="stock" required placeholder="0">
+                        </div>
+                    </div>
+                    <div class="d-grid mt-4">
+                        <button type="submit" class="btn btn-primary-premium py-2 rounded-3">Simpan Produk</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Edit Product Modal -->
+<div class="modal fade" id="editModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow rounded-4">
+            <div class="modal-header border-0 pb-0">
+                <h5 class="modal-title fw-bold">Edit Produk</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body py-4">
+                <form id="editForm">
+                    <input type="hidden" name="id" id="edit-id">
+                    <div class="mb-3">
+                        <label class="form-label text-secondary small fw-bold">Nama Produk</label>
+                        <input type="text" class="form-control rounded-3" id="edit-name" name="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label text-secondary small fw-bold">Kategori</label>
+                        <select class="form-select rounded-3" id="edit-category" name="category" required>
+                            <option value="Sembako">Sembako</option>
+                            <option value="Minuman">Minuman</option>
+                            <option value="Makanan Ringan">Makanan Ringan</option>
+                            <option value="Lainnya">Lainnya</option>
+                        </select>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label text-secondary small fw-bold">Harga (Rp)</label>
+                            <input type="number" class="form-control rounded-3" id="edit-price" name="price" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label text-secondary small fw-bold">Stok</label>
+                            <input type="number" class="form-control rounded-3" id="edit-stock" name="stock" required>
+                        </div>
+                    </div>
+                    <div class="d-grid mt-4">
+                        <button type="submit" class="btn btn-primary-premium py-2 rounded-3">Perbarui Produk</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Delete Confirmation Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+        <div class="modal-content border-0 shadow rounded-4">
+            <div class="modal-body text-center py-4">
+                <div class="text-danger mb-3">
+                    <i class="fas fa-exclamation-triangle fa-3x"></i>
+                </div>
+                <h5 class="fw-bold">Hapus Produk?</h5>
+                <p class="text-secondary small">Tindakan ini tidak dapat dibatalkan.</p>
+                <div class="d-flex justify-content-center gap-2 mt-4">
+                    <button type="button" class="btn btn-light px-4 rounded-3" data-bs-dismiss="modal">Batal</button>
+                    <button type="button" class="btn btn-danger px-4 rounded-3" id="confirmDelete">Hapus</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
