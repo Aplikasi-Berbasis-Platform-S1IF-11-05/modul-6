@@ -1,0 +1,44 @@
+[
+  {
+    "id": "1712496000000",
+    "nama": "Beras Maknyus 5kg",
+    "kategori": "Sembako",
+    "harga": 75000,
+    "stok": 20
+  },
+  {
+    "id": "1712496100000",
+    "nama": "Indomie Goreng Suki (Special)",
+    "kategori": "Makanan",
+    "harga": 3500,
+    "stok": 150
+  },
+  {
+    "id": "1712496200000",
+    "nama": "Minyak Goreng Bimoli 2L",
+    "kategori": "Sembako",
+    "harga": 34000,
+    "stok": 12
+  },
+  {
+    "id": "1712496300000",
+    "nama": "Kopi Kapal Api Renceng",
+    "kategori": "Minuman",
+    "harga": 12500,
+    "stok": 45
+  },
+  {
+    "id": "1712496400000",
+    "nama": "Sabun Mandi Lifebuoy",
+    "kategori": "Kebutuhan Harian",
+    "harga": 4500,
+    "stok": 30
+  },
+  {
+    "id": "1775571176072",
+    "nama": "Odol",
+    "kategori": "Kebutuhan Harian",
+    "harga": 79.9,
+    "stok": 50
+  }
+]
