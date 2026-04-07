@@ -1,0 +1,14 @@
+{
+    "name": "toko-kelontong",
+    "version": "1.0.0",
+    "description": "Inventaris Toko Pak Cik & Aimar",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js"
+    },
+    "author": "Megan Sulthon",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.22.1"
+    }
+}
