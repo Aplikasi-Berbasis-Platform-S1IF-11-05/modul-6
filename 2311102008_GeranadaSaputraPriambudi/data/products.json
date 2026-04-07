@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Beras Pandan Wangi",
+    "category": "Sembako",
+    "price": 65000,
+    "stock": 10
+  },
+  {
+    "id": 2,
+    "name": "Minyak Goreng 2L",
+    "category": "Sembako",
+    "price": 32000,
+    "stock": 15
+  },
+  {
+    "id": 3,
+    "name": "Teh Kotak",
+    "category": "Minuman",
+    "price": 5000,
+    "stock": 50
+  }
+]
