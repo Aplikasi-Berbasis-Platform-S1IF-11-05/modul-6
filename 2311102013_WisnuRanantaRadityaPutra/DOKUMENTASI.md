@@ -52,8 +52,9 @@ node -v
 ```
 git clone nama-file
 ```
-3. install modul 
+3. install modul
 ```text
+npm init -y
 npm install express
 ```
 4. Jalankan server

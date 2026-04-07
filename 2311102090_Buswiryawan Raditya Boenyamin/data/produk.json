@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "nama": "Indomie Goreng",
+    "kategori": "Makanan",
+    "stok": 150,
+    "harga": 3500,
+    "satuan": "pcs",
+    "keterangan": "Mie instan goreng original"
+  },
+  {
+    "id": 2,
+    "nama": "Aqua 600ml",
+    "kategori": "Minuman",
+    "stok": 200,
+    "harga": 4000,
+    "satuan": "botol",
+    "keterangan": "Air mineral kemasan 600ml"
+  },
+  {
+    "id": 3,
+    "nama": "Beras Premium",
+    "kategori": "Sembako",
+    "stok": 50,
+    "harga": 75000,
+    "satuan": "kg",
+    "keterangan": "Beras premium pulen wangi"
+  },
+  {
+    "id": 4,
+    "nama": "Minyak Goreng Bimoli 1L",
+    "kategori": "Sembako",
+    "stok": 40,
+    "harga": 21000,
+    "satuan": "liter",
+    "keterangan": "Minyak goreng premium"
+  },
+  {
+    "id": 5,
+    "nama": "Gula Pasir 1kg",
+    "kategori": "Sembako",
+    "stok": 60,
+    "harga": 14000,
+    "satuan": "kg",
+    "keterangan": "Gula pasir putih bersih"
+  },
+  {
+    "id": 6,
+    "nama": "Kopi Kapal Api",
+    "kategori": "Minuman",
+    "stok": 80,
+    "harga": 2500,
+    "satuan": "sachet",
+    "keterangan": "Kopi bubuk aromatis"
+  },
+  {
+    "id": 7,
+    "nama": "Sabun Lifebuoy",
+    "kategori": "Toiletries",
+    "stok": 100,
+    "harga": 5500,
+    "satuan": "pcs",
+    "keterangan": "Sabun mandi antiseptik"
+  },
+  {
+    "id": 8,
+    "nama": "Susu Ultra 250ml",
+    "kategori": "Minuman",
+    "stok": 90,
+    "harga": 6500,
+    "satuan": "pcs",
+    "keterangan": "Susu UHT full cream"
+  }
+]

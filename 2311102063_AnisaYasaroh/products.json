@@ -1,0 +1,17 @@
+[
+  {
+    "nama": "minyak",
+    "harga": "40000",
+    "stok": "2"
+  },
+  {
+    "nama": "Telur",
+    "harga": "7000",
+    "stok": "5"
+  },
+  {
+    "nama": "Indomie Soto",
+    "harga": "3500",
+    "stok": "6"
+  }
+]

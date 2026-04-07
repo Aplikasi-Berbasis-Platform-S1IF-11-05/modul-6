@@ -1,0 +1,16 @@
+[
+    {
+        "id": "1",
+        "nama": "Paket Suki Spesial",
+        "kategori": "Makanan",
+        "stok": "15",
+        "harga": "55000"
+        },
+        {
+        "id": "1775571903363",
+        "nama": "Indomie",
+        "kategori": "Makanan",
+        "stok": "200",
+        "harga": "35000"
+    }
+]

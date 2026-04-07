@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Tambah Produk</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+
+<body class="bg-light">
+
+<div class="container mt-5">
+    <div class="card shadow">
+        <div class="card-body">
+            <h3 class="text-center mb-4">Tambah Produk</h3>
+
+            <form id="formCreate">
+                <input class="form-control mb-3" name="nama" placeholder="Nama Produk" required>
+                <input class="form-control mb-3" name="harga" placeholder="Harga" required>
+                <input class="form-control mb-3" name="stok" placeholder="Stok" required>
+
+                <div class="d-grid">
+                    <button class="btn btn-success">Simpan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+$('#formCreate').submit(function(e){
+    e.preventDefault();
+
+    let data = {
+        nama: $('[name=nama]').val(),
+        harga: $('[name=harga]').val(),
+        stok: $('[name=stok]').val()
+    };
+
+    $.ajax({
+        url: '/api/products',
+        type: 'POST',
+        data: JSON.stringify(data),
+        contentType: 'application/json',
+        success: function(){
+            alert('Berhasil tambah');
+            window.location.href = 'index.html';
+        }
+    });
+});
+</script>
+
+</body>
+</html>

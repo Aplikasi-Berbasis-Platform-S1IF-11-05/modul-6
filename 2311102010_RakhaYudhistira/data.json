@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1712534400000,
+    "nama": "Kopi Sachet",
+    "harga": "3000",
+    "stok": "20"
+  },
+  {
+    "id": 1712534400001,
+    "nama": "Batre ABC",
+    "harga": "5000",
+    "stok": "20"
+  },
+  {
+    "id": 1775579041906,
+    "nama": "Susu Coklat",
+    "harga": "5000",
+    "stok": "90"
+  }
+]
