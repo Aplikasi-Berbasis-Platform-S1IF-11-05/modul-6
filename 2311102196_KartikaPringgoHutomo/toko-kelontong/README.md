@@ -12,7 +12,7 @@
   <p>
     <strong>Kartika Pringgo Hutomo</strong>
     <br>
-    <strong>2311102195</strong>
+    <strong>2311102196</strong>
     <br>
     <strong>S1 IF-11-REG05</strong>
   </p>
