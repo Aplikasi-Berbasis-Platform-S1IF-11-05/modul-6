@@ -1,61 +1,52 @@
 <div align="center">
-
-# LAPORAN PRAKTIKUM  
-## APLIKASI BERBASIS PLATFORM  
-
-### MODUL 6  
-### JAVASCRIPT & JQUERY  
-
-<br>
-
-<img width="250" src="https://github.com/user-attachments/assets/724a3291-bcf9-448d-a395-3886a8659d79" />
-
-<br><br>
-
-### Disusun Oleh :
-**Amelia Azmi**  
-**2311102135**  
-**S1 IF-11-REG05**
-
-<br>
-
-### Dosen Pengampu :
-**Dedi Agung Prabowo, S.Kom., M.Kom**
-
-<br>
-
-### Asisten Praktikum :
-Apri Pandu Wicaksono  
-Hamka Zaenul Ardi  
-
-<br>
-
-### LABORATORIUM HIGH PERFORMANCE  
-FAKULTAS INFORMATIKA  
-UNIVERSITAS TELKOM PURWOKERTO  
-2026  
-
+  <br />
+  <h1>LAPORAN PRAKTIKUM <br> APLIKASI BERBASIS PLATFORM </h1>
+  <br />
+  <h3>MODUL 6 <br> JS & Query</h3>
+  <br />
+  <img width="512" height="512" alt="telyu" src="https://github.com/user-attachments/assets/724a3291-bcf9-448d-a395-3886a8659d79" />
+  <br />
+  <br />
+  <br />
+  <h3>Disusun Oleh :</h3>
+  <p>
+    <strong>Amelia Azmi</strong>
+    <br>
+    <strong>2311102135</strong>
+    <br>
+    <strong>S1 IF-11-REG05</strong>
+  </p>
+  <br />
+  <h3>Dosen Pengampu :</h3>
+  <p>
+    <strong>Dedi Agung Prabowo, S.Kom., M.Kom</strong>
+  </p>
+  <br />
+  <br />
+  <h4>Asisten Praktikum :</h4>
+  <strong>Apri Pandu Wicaksono </strong>
+  <br>
+  <strong>Hamka Zaenul Ardi</strong>
+  <br />
+  <h3>LABORATORIUM HIGH PERFORMANCE <br>FAKULTAS INFORMATIKA <br>UNIVERSITAS TELKOM PURWOKERTO <br>2026 </h3>
 </div>
 
----
+<hr>
 
-# 📚 Dasar Teori
+# Dasar Teori
 
-### 🔹 JavaScript
-JavaScript merupakan bahasa pemrograman yang berfungsi untuk mengatur logika dan perilaku pada halaman web. JavaScript memungkinkan halaman web menjadi interaktif dan dinamis.
+Laravel adalah sebuah framework berbasis PHP yang digunakan untuk mengembangkan aplikasi web secara cepat, efisien, dan terstruktur. Laravel dirancang dengan konsep MVC (Model-View-Controller) yang memisahkan antara logika aplikasi, tampilan, dan pengelolaan data, sehingga kode menjadi lebih rapi dan mudah dikelola.
 
----
+Dalam arsitektur MVC, Model berfungsi untuk mengelola data serta berinteraksi langsung dengan database, View digunakan untuk menampilkan antarmuka pengguna (user interface), sedangkan Controller bertugas sebagai penghubung antara Model dan View serta mengatur alur logika aplikasi. Dengan pemisahan ini, pengembangan aplikasi menjadi lebih sistematis dan mudah dipahami.
 
-### 🔹 jQuery
-jQuery adalah pustaka JavaScript yang menyederhanakan penulisan kode seperti event handling dan animasi.
+Laravel juga memiliki struktur folder yang terorganisir dengan baik, seperti folder app untuk logika aplikasi, routes untuk pengaturan URL, resources/views untuk tampilan, serta database untuk pengelolaan struktur basis data. Hal ini membantu developer dalam mengelola proyek secara lebih efisien.
 
----
+Salah satu fitur penting dalam Laravel adalah routing, yaitu mekanisme untuk mengatur jalur URL agar dapat mengarah ke fungsi tertentu dalam aplikasi. Selain itu, Laravel menyediakan Blade Template Engine yang memudahkan pembuatan tampilan dengan sintaks yang sederhana namun powerful.
 
 # 🧪 Tugas 6
 
 ## 🎨 VIEW (index.blade.php)
-
-```html
+```
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -90,12 +81,14 @@ body {
 </body>
 </html>
 
-```html
+```
 
-### Output :
+Output:
+<img width="1920" height="1080" alt="cyber" src="https://github.com/user-attachments/assets/e551cb89-50a2-4625-ad42-3f2c2a9a6bdb" />
 
-### Pnjelasan :
 
+
+# Penjelasan
 Program ini merupakan aplikasi web sederhana berbasis Laravel yang digunakan untuk mengelola produk digital pada sebuah Cyber Store. Produk yang dikelola meliputi pulsa, paket data, voucher game, serta layanan digital lainnya.
 
 Berbeda dengan aplikasi inventori konvensional, sistem ini tidak menggunakan database, melainkan memanfaatkan file JSON sebagai media penyimpanan data. Hal ini membuat aplikasi lebih ringan dan mudah dikembangkan untuk kebutuhan pembelajaran.
