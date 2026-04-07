@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "name": "Helikopter",
+        "stock": 1,
+        "price": 99000000000
+    },
+    {
+        "id": 2,
+        "name": "Kapal Laut",
+        "stock": 1,
+        "price": 18100000000
+    }
+]
