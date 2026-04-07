@@ -22,7 +22,7 @@
 
 ## Struktur Berkas
 ```text
-toko-pak-cik/
+2311102013_WisnuRanantaRadityaPutra/
 │
 ├── public 
 │   └── index.html        # UI web 
