@@ -2,7 +2,7 @@
   <br />
   <h1>LAPORAN PRAKTIKUM <br> APLIKASI BERBASIS PLATFORM </h1>
   <br />
-  <h3>MODUL 6 <br> JAVASCRIPT & JQUERY </h3>
+  <h3>MODUL 6 <br> Coding on the Spot 1 </h3>
   <br />
   <img width="512" height="512" alt="telyu" src="https://github.com/user-attachments/assets/724a3291-bcf9-448d-a395-3886a8659d79" />
   <br />
@@ -33,165 +33,124 @@
 
 <hr>
 
-# Dasar Teori Javascript & JQUERY
+# Dasar Teori Coding on the Spot 1
 
 ## Pengertian Javascript
 JavaScript adalah bahasa pemrograman yang digunakan untuk membuat halaman web menjadi interaktif dan dinamis. JavaScript berjalan di sisi client (browser), sehingga dapat memanipulasi elemen HTML dan CSS secara langsung tanpa perlu reload halaman.
 
-## Pengertian JQUERY
-jQuery adalah library JavaScript yang dibuat untuk menyederhanakan penulisan kode JavaScript, terutama dalam manipulasi DOM, event handling, dan AJAX.
+## 1. Di dalam server.js, menggunakan materi:
 
-Dengan jQuery, penulisan kode menjadi lebih singkat dan mudah dibanding JavaScript biasa.
+1. Node.js: Sebagai mesin yang menjalankan JavaScript di laptop (bukan di browser).
 
-JavaScript adalah bahasa utama untuk membuat web menjadi interaktif, sedangkan jQuery adalah library yang membantu menyederhanakan penggunaan JavaScript. Keduanya sering digunakan bersama dalam pengembangan web untuk meningkatkan efisiensi dan kemudahan dalam coding.
+2. ExpressJS: Framework buat bikin jalur (Route). Contohnya: kalau ada orang minta data (GET /api/produk), Express yang ngasih.
 
+3. FileSystem (fs): Materi tentang cara kodingan membaca dan menulis file ke dalam harddisk (mengolah produk.json).
+
+4. REST API: Konsep pengiriman data menggunakan metode GET (ambil), POST (tambah), PUT (edit), dan DELETE (hapus).
+
+## Di dalam index.html dan script.js, lu menggunakan materi:
+
+1. Bootstrap 5: Materi tentang Layouting (Grid system) dan komponen UI (Card, Modal, Button) supaya tampilan rapi tanpa perlu ngetik ribuan baris CSS manual.
+
+2. jQuery: Materi tentang manipulasi DOM (Document Object Model). Gunanya buat "nembak" data ke tabel tanpa refresh halaman.
+
+3. AJAX: Teknik komunikasi antara Frontend dan Backend. Ini yang bikin aplikasi lu kerasa "enteng" karena data dikirim di balik layar.
+
+4. JSON (JavaScript Object Notation): Materi tentang format pertukaran data. Bentuknya yang kayak daftar list itu standar internasional buat simpan data.
+## Materi tentang bagaimana user berinteraksi dengan aplikasi:
+
+1. Modal Dialog: Biar user nggak pindah-pindah halaman pas mau input data.
+
+2. Form Validation: Memastikan inputan nama, harga, dan stok sudah terisi sebelum disimpan.
+
+3. Konfirmasi Action: Adanya modal pop-up pas mau hapus data itu bagian dari materi Error Prevention (biar nggak salah klik).
 
 ### Source code 
-```js
-//app.js
-const express = require('express');
-const app = express();
-const productRoutes = require('./routes/productRoutes');
-
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-app.use(express.static('public'));
-app.use('/products', productRoutes);
-
-app.listen(3000, () => {
-  console.log('Server running on http://localhost:3000');
-});
-
-```
-
-```js
-//productController.js
-const fs = require('fs');
-const path = './data/products.json';
-
-const getAll = (req, res) => {
-  const data = JSON.parse(fs.readFileSync(path));
-  res.json(data);
-};
-
-const create = (req, res) => {
-  const data = JSON.parse(fs.readFileSync(path));
-
-  console.log("BODY:", req.body);
-
-  const newProduct = {
-    id: Date.now(),
-    name: req.body.name,
-    price: req.body.price,
-    stock: req.body.stock
-  };
-
-// Selebihnya dapat cek pada file "productController.js"
-```
-🔗 [Klik di sini untuk membuka file `productController.js`](controllers/productController.js)
-
-```js
-//productRoutes.js
-const express = require('express');
-const router = express.Router();
-const ctrl = require('../controllers/productController');
-
-router.get('/', ctrl.getAll);
-router.post('/', ctrl.create);
-router.put('/:id', ctrl.update);
-router.delete('/:id', ctrl.remove);
-
-module.exports = router;
-  };
-```
 
 ```html
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-  <title>Toko Pak Cik</title>
-
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <style>
-    body {
-      background: #f5f7fa;
-    }
-
-    .card {
-      border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-
-    .btn {
-      border-radius: 10px;
-    }
-
-    table tbody tr:hover {
-      background: #f1f1f1;
-      transition: 0.3s;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventori Pak Cik & Aimar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
+<body>
 
-<body class="container mt-5">
+<nav class="navbar navbar-expand-lg bg-white mb-4 shadow-sm">
+    <div class="container">
+        <a class="navbar-brand fw-bold text-primary" href="#">
+            <i class='bx bxs-store-alt me-2'></i>Toko Pak Cik & Aimar
+        </a>
+    </div>
+</nav>
 
-<div class="card p-4">
-  <div class="d-flex justify-content-between align-items-center mb-3">
-    <h3>🛒 Inventori Toko Pak Cik</h3>
-    <button class="btn btn-primary" onclick="openAddModal()">+ Tambah Produk</button>
-  </div>
-
-  <table class="table table-striped text-center">
-    <thead class="table-dark">
-      <tr>
-        <th>Nama</th>
-        <th>Harga</th>
-        <th>Stock</th>
-        <th>Aksi</th>
-      </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
-</div>
+<div class="container">
+    <div class="row mb-4 align-items-center">
+        <div class="col">
+            <h4 class="fw-bold mb-0">Dashboard Stok Barang</h4>
+            <p class="text-muted small">Kelola ketersediaan produk harian</p>
+        </div>
+        <div class="col-auto">
+            <button class="btn btn-primary d-flex align-items-center" id="btnTambah" data-bs-toggle="modal" data-bs-target="#formModal">
+                <i class='bx bx-plus me-2'></i> Tambah Produk
+            </button>
+        </div>
+    </div>
 <!-- Selebihnya dapat cek pada file "index.html" -->
 ```
-🔗 [Klik di sini untuk membuka file `index.html`](public/index.html)
+🔗 [Klik di sini untuk membuka file `index.html`](views/index.html)
 
 ```js
-let selectedId = null;
+l$(document).ready(function() {
+    loadTabel();
 
-function loadData() {
-  $.get('/products', function(data) {
-    let rows = '';
-
-    data.forEach(p => {
-      rows += `
-        <tr>
-          <td><strong>${p.name}</strong></td>
-          <td>Rp ${p.price}</td>
-          <td><span class="badge bg-success">${p.stock}</span></td>
-          <td>
-            <button class="btn btn-warning btn-sm" onclick="openEditModal(${p.id}, '${p.name}', ${p.price}, ${p.stock})">Edit</button>
-            <button class="btn btn-danger btn-sm" onclick="confirmDelete(${p.id})">Delete</button>
-          </td>
-        </tr>
-      `;
+    $('#btnTambah').click(function() {
+        $('#modalTitle').text('Tambah Barang Baru');
+        $('#idProduk').val('');
+        $('#produkForm')[0].reset();
     });
 
-    $('tbody').html(rows);
-  });
-}
-//Selebihnya dapat cek pada file "public/js/app.js"
+    $('#produkForm').submit(function(e) {
+        e.preventDefault();
+        const id = $('#idProduk').val();
+        const payload = {
+            nama: $('#nama').val(),
+            harga: $('#harga').val(),
+            stok: $('#stok').val()
+        };
+
+        const method = id ? 'PUT' : 'POST';
+        const url = id ? `/api/produk/${id}` : '/api/produk';
+
+        $.ajax({
+            url: url,
+            type: method,
+            contentType: 'application/json',
+            data: JSON.stringify(payload),
+            success: function() {
+                $('#formModal').modal('hide');
+                loadTabel();
+            }
+        });
+    });
+});
+
+\
+//Selebihnya dapat cek pada file "public/js/script.js"
 ```
-🔗 [Klik di sini untuk membuka file `app.js`](public/js/app.js)
+🔗 [Klik di sini untuk membuka file `script.js`](public/js/script.js)
 
 Output:
-<img src="Screenshot (1092).png" alt="preview" style="width:100%; max-width:900px;">
-<img src="Screenshot (1093).png" alt="preview" style="width:100%; max-width:900px;">
+<img src="./assets/add-product.png" alt="preview" style="width:100%; max-width:900px;">
+<img src="./assets/delete product.png" alt="preview" style="width:100%; max-width:900px;">
+<img src="./assets/edit-produk.png" alt="preview" style="width:100%; max-width:900px;">
+<img src="./assets/homepage.png" alt="preview" style="width:100%; max-width:900px;">
 
 
 ## Penjelasan
-Project ini menggunakan Express.js sebagai backend untuk mengelola data produk melalui API, serta frontend JavaScript untuk menampilkan dan memanipulasi data secara dinamis. Sistem terhubung dengan database MySQL sehingga data produk dapat disimpan, ditampilkan, dan dihapus secara real-time.
+Tugas ini adalah aplikasi Inventory CRUD (Create, Read, Update, Delete) yang berjalan di atas Node.js. Saya tidak pakai database SQL, tapi pakai JSON File Persistence. Untuk interaksi user, saya pakai AJAX jQuery supaya pengelolaan stok barang Toko Pak Cik ini lebih responsif dan modern dengan styling Bootstrap 5
