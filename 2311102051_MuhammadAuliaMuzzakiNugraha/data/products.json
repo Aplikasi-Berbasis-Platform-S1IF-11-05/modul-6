@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1775583031825,
+    "name": "kucing",
+    "price": 20000,
+    "stock": 5
+  },
+  {
+    "id": 1775583297194,
+    "name": "Air Galon",
+    "price": 200000,
+    "stock": 25
+  },
+  {
+    "id": 1775583806726,
+    "name": "Beras Premium",
+    "price": 75000,
+    "stock": 2
+  },
+  {
+    "id": 1775585771254,
+    "name": "Dapon",
+    "price": 50000,
+    "stock": 5
+  },
+  {
+    "id": 1775585785230,
+    "name": "Reza Auditore",
+    "price": 100000000,
+    "stock": 5
+  },
+  {
+    "id": 1775585800963,
+    "name": "Lades gimank",
+    "price": 2000000,
+    "stock": 1
+  }
+]
