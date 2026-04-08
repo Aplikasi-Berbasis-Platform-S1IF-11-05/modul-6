@@ -2,7 +2,7 @@
   <br />
   <h1>LAPORAN PRAKTIKUM <br> APLIKASI BERBASIS PLATFORM </h1>
   <br />
-  <h3>MODUL 6 <br> JAVASCRIPT & JQUERY </h3>
+  <h3>MODUL 6 <br> COTS </h3>
   <br />
   <img width="512" height="512" alt="telyu" src="https://github.com/user-attachments/assets/724a3291-bcf9-448d-a395-3886a8659d79" />
   <br />
@@ -33,43 +33,13 @@
 
 <hr>
 
-# Dasar Teori Javascript & JQUERY
+## Dasar Teori COTS
 
-1. Pengertian Javascript
-JavaScript adalah bahasa pemrograman yang digunakan untuk membuat halaman web menjadi lebih interaktif dan dinamis. Dengan JavaScript, developer dapat memanipulasi elemen HTML, menangani event, serta berinteraksi dengan pengguna secara langsung di browser tanpa perlu memuat ulang halaman.
+Commercial Off-The-Shelf (COTS) adalah solusi perangkat lunak yang dikembangkan oleh pihak ketiga dan didistribusikan secara umum untuk memenuhi kebutuhan standar pengguna. Dalam pengembangan sistem, COTS digunakan sebagai komponen siap pakai yang dapat langsung diintegrasikan ke dalam aplikasi tanpa melalui proses perancangan dari nol. Pendekatan ini banyak digunakan dalam pengembangan perangkat lunak modern karena mampu mempercepat proses pembangunan sistem dan memanfaatkan teknologi yang sudah matang.
 
-2. Fungsi dan Kegunaan JavaScript
+Dari sisi implementasi, penggunaan COTS memberikan efisiensi yang tinggi karena pengembang tidak perlu mengalokasikan sumber daya untuk membangun fitur-fitur dasar yang sudah tersedia. Selain itu, COTS biasanya memiliki dokumentasi lengkap, dukungan teknis, serta pembaruan berkala dari vendor, sehingga membantu menjaga stabilitas sistem. Namun, di balik kelebihannya, terdapat beberapa tantangan seperti keterbatasan dalam modifikasi fitur, risiko ketergantungan pada vendor, serta kemungkinan adanya fitur yang tidak sepenuhnya sesuai dengan kebutuhan pengguna.
 
-JavaScript memiliki beberapa fungsi utama dalam pengembangan web, antara lain:
-
-Memanipulasi DOM (Document Object Model)
-Menangani event seperti klik, hover, dan input user
-Validasi form sebelum dikirim ke server
-Membuat animasi dan efek interaktif
-Berkomunikasi dengan server menggunakan AJAX
-3. Pengertian jQuery
-
-jQuery adalah library JavaScript yang dirancang untuk menyederhanakan penulisan kode JavaScript. Dengan jQuery, proses manipulasi DOM, event handling, animasi, dan AJAX menjadi lebih mudah dan efisien dibandingkan JavaScript murni.
-
-4. Keunggulan jQuery
-
-Beberapa keunggulan jQuery antara lain:
-
-Sintaks lebih sederhana dan mudah dipahami
-Mendukung berbagai browser (cross-browser compatibility)
-Mempercepat proses pengembangan
-Memiliki banyak plugin tambahan
-5. Perbedaan JavaScript dan jQuery
-JavaScript adalah bahasa pemrograman utama, sedangkan jQuery adalah library yang dibangun menggunakan JavaScript
-Penulisan kode jQuery lebih singkat dibandingkan JavaScript murni
-JavaScript lebih fleksibel dan tidak bergantung pada library tambahan
-6. Konsep Dasar Penggunaan
-
-Dalam penggunaannya:
-
-JavaScript dapat ditulis langsung di dalam file HTML atau file terpisah (.js)
-jQuery harus di-include terlebih dahulu sebelum digunakan
-Penulisan jQuery biasanya diawali dengan simbol $ sebagai selector
+Oleh karena itu, dalam pengembangan aplikasi, COTS umumnya digunakan sebagai pelengkap yang dikombinasikan dengan pengembangan kustom. Strategi ini memungkinkan pengembang untuk memanfaatkan keunggulan COTS dalam hal efisiensi dan kecepatan, sekaligus tetap mempertahankan fleksibilitas sistem melalui pengembangan fitur yang spesifik. Dengan pemilihan yang tepat, COTS dapat menjadi solusi yang efektif untuk meningkatkan produktivitas dan kualitas dalam proses pengembangan perangkat lunak.
 
 ### Source code 
 ```py
