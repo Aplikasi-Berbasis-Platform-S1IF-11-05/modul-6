@@ -2,7 +2,7 @@
   <br />
   <h1>LAPORAN PRAKTIKUM <br> APLIKASI BERBASIS PLATFORM </h1>
   <br />
-  <h3>MODUL 3 <br> JAVASCRIPT & JQUERY </h3>
+  <h3>MODUL 6 <br> COTS </h3>
   <br />
   <img width="512" height="512" alt="telyu" src="https://github.com/user-attachments/assets/724a3291-bcf9-448d-a395-3886a8659d79" />
   <br />
@@ -35,13 +35,13 @@
 
 ## Dasar Teori
 
-JavaScript adalah bahasa pemrograman yang digunakan untuk menambahkan interaktivitas pada halaman web, sehingga halaman tidak hanya bersifat statis tetapi juga mampu merespons tindakan pengguna seperti klik tombol, pengisian form, validasi data, serta perubahan tampilan secara dinamis. JavaScript bekerja di sisi klien (client-side), yaitu dijalankan langsung oleh browser pengguna, sehingga proses interaksi dapat berlangsung lebih cepat tanpa selalu bergantung pada server. Bahasa ini menjadi salah satu komponen utama dalam pengembangan web modern bersama HTML dan CSS.
+Coding On The Spot (COTS) adalah metode pengembangan aplikasi di mana kode ditulis dan diuji secara langsung sehingga setiap perubahan dapat segera dilihat dan diperiksa. Pendekatan ini memungkinkan programmer untuk bereksperimen dengan logika aplikasi dan menyesuaikan interaksi secara cepat. Pada implementasi COTS untuk aplikasi Toko Kelontong, JavaScript digunakan untuk mengatur logika interaktif di sisi client, termasuk menampilkan data, menambah, mengubah, dan menghapus informasi produk. Sementara itu, jQuery mempermudah manipulasi elemen HTML, pengaturan event pada tombol dan form, serta pembaruan konten halaman secara langsung sehingga tampilan aplikasi selalu responsif terhadap tindakan pengguna.
 
-jQuery merupakan pustaka (library) JavaScript yang dirancang untuk menyederhanakan penulisan kode JavaScript, terutama dalam manipulasi elemen HTML, pengelolaan event, animasi, dan pertukaran data menggunakan AJAX. Dengan sintaks yang lebih ringkas, jQuery mempermudah pengembang dalam membuat aplikasi web yang interaktif. Dalam praktikum ini, JavaScript dan jQuery digunakan untuk membangun fitur CRUD (Create, Read, Update, Delete) pada data produk toko kelontong, sehingga proses tambah, edit, hapus, dan tampil data dapat dilakukan secara dinamis tanpa memuat ulang halaman.
+Di sisi server, Node.js dan Express berfungsi untuk mengelola data produk yang disimpan dalam file JSON, menyediakan layanan yang memungkinkan client mengambil dan memperbarui informasi produk. Penggunaan DataTables meningkatkan interaktivitas tabel dengan fitur pencarian, pengurutan, dan pagination sehingga manajemen data lebih efisien. Dengan kombinasi JavaScript, jQuery, dan server berbasis Node.js, metode COTS memungkinkan pembuatan aplikasi yang interaktif dan responsif serta memudahkan pengembangan dan pengujian secara real-time.
 
-## Penjelasan Kode Javascript & jQuery
+## Penjelasan Kode COTS
 
-Kode JavaScript dan jQuery digunakan untuk menampilkan serta mengelola data produk pada halaman web. Proses tambah, edit, dan hapus data dilakukan menggunakan AJAX tanpa perlu memuat ulang halaman. Selain itu, tabel produk dibuat lebih interaktif dengan bantuan DataTables.
+JavaScript dan jQuery digunakan sebagai sisi client untuk menangani interaksi dengan halaman web, sedangkan server menggunakan ExpressJS untuk mengelola data melalui REST API. Data produk ditampilkan secara dinamis ke tabel HTML, dan setiap proses tambah, edit, atau hapus data dikirim ke server dengan metode HTTP, lalu langsung diperbarui pada tampilan. Penggunaan DataTables menambah fitur pencarian, pengurutan, dan pagination untuk mempermudah pengelolaan data.
 
 ## Task 6: Toko Kelontong Pak Cik dan Aimar
 
@@ -445,6 +445,6 @@ app.listen(PORT, () => {
 
 ### Penjelasan Code
 
-Kode JavaScript dan jQuery pada task ini digunakan untuk mengelola data produk pada web inventaris toko secara dinamis melalui konsep CRUD (Create, Read, Update, Delete). Fungsi `loadProducts()` digunakan untuk mengambil data produk dari server menggunakan AJAX metode GET, kemudian menampilkannya ke dalam tabel HTML secara otomatis. Sebelum data dimuat kembali, tabel akan di-destroy terlebih dahulu agar plugin DataTables dapat diinisialisasi ulang dengan benar sehingga fitur pencarian, pengurutan, dan pagination tetap berjalan.
+Kode JavaScript dan jQuery pada aplikasi ini berfungsi untuk mengatur interaksi pengguna di sisi client. Fungsi `loadProducts()` menampilkan data produk ke dalam tabel HTML secara dinamis, sementara `showAlert()` memberikan notifikasi setelah data ditambahkan, diperbarui, atau dihapus. Event handler pada tombol tambah, edit, dan hapus memungkinkan pengguna mengelola data produk langsung dari halaman, sedangkan DataTables menambahkan fitur pencarian, pengurutan, dan pagination agar tabel tetap interaktif dan mudah digunakan.
 
-Selain fungsi utama tersebut, terdapat fungsi `showToast()` yang berperan menampilkan notifikasi keberhasilan proses tambah, edit, dan hapus data agar pengguna memperoleh umpan balik secara langsung. Event `submit` pada form digunakan untuk membaca input pengguna, menentukan apakah data akan ditambahkan atau diperbarui berdasarkan nilai `editIndex`, lalu mengirim data ke server menggunakan metode POST atau PUT. Sementara itu, event klik pada tombol edit digunakan untuk memuat data lama ke dalam form modal, dan tombol delete memanggil modal konfirmasi sebelum data dihapus dengan metode DELETE. 
+Di sisi server, Node.js dan Express mengelola data produk yang disimpan di file JSON. Fungsi `readProducts()` membaca data dari file, sedangkan `saveProducts()` menyimpan perubahan data. Endpoint server untuk menambah, memperbarui, atau menghapus produk memastikan semua perubahan langsung tercermin pada tampilan. Dengan mekanisme ini, setiap proses CRUD dapat dilakukan secara terstruktur, dan data produk selalu diperbarui sesuai aksi pengguna.

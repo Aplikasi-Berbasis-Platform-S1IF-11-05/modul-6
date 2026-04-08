@@ -7,7 +7,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Memberitahu Express bahwa file statis (HTML, JS, CSS) ada di folder 'public'
+
 app.use(express.static('public'));
+
 
 const DATA_FILE = path.join(__dirname, 'data.json');
 

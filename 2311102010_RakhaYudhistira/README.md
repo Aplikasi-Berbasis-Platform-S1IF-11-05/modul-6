@@ -2,7 +2,7 @@
   <br />
   <h1>LAPORAN PRAKTIKUM <br> APLIKASI BERBASIS PLATFORM </h1>
   <br />
-  <h3>MODUL 6 <br> JAVASCRIPT & JQUERY </h3>
+  <h3>MODUL 6 <br> COTS </h3>
   <br />
   <img width="512" height="512" alt="telyu" src="https://github.com/user-attachments/assets/724a3291-bcf9-448d-a395-3886a8659d79" />
   <br />
@@ -36,11 +36,11 @@
 # Dasar Teori
 
 <p align="justify">
-JavaScript adalah bahasa pemrograman client-side yang berfungsi untuk menciptakan interaktivitas pada halaman web. Dengan memanipulasi Document Object Model (DOM), JavaScript memungkinkan perubahan konten, struktur, dan gaya secara dinamis langsung di browser pengguna. Dalam pengembangan modern, JavaScript juga digunakan di sisi server melalui Node.js untuk menangani logika aplikasi dan pengolahan data.
+Coding on the spot adalah metode pengembangan aplikasi yang menekankan kecepatan dengan memanfaatkan teknologi ringan seperti Express.js untuk membangun server dan API secara sederhana. Aplikasi menggunakan arsitektur client-server, di mana frontend berkomunikasi dengan backend melalui HTTP (GET, POST, PUT, DELETE) untuk operasi CRUD, dengan penyimpanan data menggunakan file JSON agar lebih praktis tanpa database kompleks.
 
-jQuery merupakan pustaka JavaScript yang menyederhanakan penulisan kode melalui sintaks yang lebih ringkas. Dengan prinsip "write less, do more", jQuery mempermudah seleksi elemen DOM, penanganan event (seperti klik tombol), dan eksekusi AJAX. jQuery memastikan konsistensi kode di berbagai browser dan mempercepat proses pengembangan antarmuka yang responsif.
+Penggunaan AJAX memungkinkan pertukaran data secara real-time tanpa reload halaman, sehingga aplikasi lebih responsif dan efisien.
 
-Integrasi JSON dan AJAX memungkinkan aplikasi mengelola data secara efisien tanpa refresh halaman. JSON digunakan sebagai format pertukaran data yang ringan dan mudah dibaca, menggantikan peran database dalam skema sederhana. Melalui fungsi AJAX pada jQuery, aplikasi dapat mengirim dan mengambil data dari server Express.js secara asinkron, sehingga operasional CRUD dapat berjalan secara real-time dan interaktif.
+Pendekatan ini sejalan dengan konsep COTS (Commercial Off-The-Shelf), yaitu penggunaan komponen atau software siap pakai untuk mempercepat pengembangan. COTS membantu menghemat waktu dan biaya, namun memiliki keterbatasan dalam fleksibilitas dan ketergantungan pada pihak ketiga.
 </p>
 
 

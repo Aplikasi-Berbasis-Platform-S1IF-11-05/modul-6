@@ -33,6 +33,58 @@
 
 <hr>
 
+# Dasar Teori
+
+Pada modul COTS (Coding On The Spot), aplikasi dibangun menggunakan kombinasi backend dan frontend berbasis JavaScript. Materi yang digunakan mencakup konsep bahasa pemrograman, framework, library, serta tools pendukung pengembangan web.
+
+## 1) JavaScript
+JavaScript adalah bahasa pemrograman utama pada proyek ini. Di sisi backend, JavaScript dijalankan menggunakan Node.js. Di sisi frontend, JavaScript digunakan untuk mengatur interaksi pengguna, manipulasi tampilan, dan komunikasi data dengan server.
+
+## 2) Node.js
+Node.js adalah runtime JavaScript di luar browser yang digunakan untuk menjalankan server aplikasi. Dengan Node.js, satu bahasa yang sama (JavaScript) dapat dipakai di backend dan frontend sehingga alur pengembangan lebih konsisten.
+
+## 3) Express.js
+Express.js adalah framework backend berbasis Node.js yang memudahkan pembuatan routing dan API. Pada modul ini, Express digunakan untuk:
+1. Menyediakan route halaman utama.
+2. Menyediakan endpoint API CRUD (GET, POST, PUT, DELETE).
+3. Mengelola middleware untuk parsing request body dan file statis.
+
+## 4) EJS (Embedded JavaScript)
+EJS adalah template engine untuk menghasilkan tampilan HTML secara dinamis dari server. EJS memudahkan pemisahan struktur halaman dan logika render, sehingga data dari backend dapat ditampilkan ke antarmuka pengguna dengan rapi.
+
+## 5) HTML, CSS, dan Bootstrap
+1. HTML dipakai untuk struktur konten halaman.
+2. CSS dipakai untuk styling dan identitas visual.
+3. Bootstrap dipakai untuk komponen UI siap pakai dan sistem grid responsif agar tampilan tetap baik di desktop maupun mobile.
+
+## 6) jQuery
+jQuery adalah library JavaScript yang menyederhanakan manipulasi DOM, event handling, dan AJAX. Dalam modul ini, jQuery membantu mempercepat proses:
+1. Mengambil data produk dari API.
+2. Menangani aksi tombol tambah, edit, hapus.
+3. Memperbarui tampilan secara dinamis tanpa reload halaman penuh.
+
+## 7) JSON dan File System (fs)
+Data produk disimpan dalam file JSON sebagai penyimpanan sederhana. Modul bawaan Node.js, yaitu `fs`, digunakan untuk membaca dan menulis data ke file `products.json`. Pendekatan ini cocok untuk skala praktikum karena mudah dipahami dan diimplementasikan.
+
+## 8) REST API dan Konsep CRUD
+Konsep CRUD (Create, Read, Update, Delete) diimplementasikan melalui REST API:
+1. GET untuk membaca data.
+2. POST untuk menambah data.
+3. PUT untuk memperbarui data.
+4. DELETE untuk menghapus data.
+
+## 9) npm dan package.json
+npm (Node Package Manager) digunakan untuk mengelola dependency seperti `express` dan `ejs`. Informasi paket proyek, script, dan versi dependency dicatat pada `package.json` agar lingkungan pengembangan konsisten.
+
+## 10) Arsitektur Client-Server
+Modul COTS menerapkan pola client-server:
+1. Client (browser) menampilkan UI dan mengirim request.
+2. Server (Express) memproses request dan mengelola data.
+3. Respons JSON dikirim kembali untuk ditampilkan secara dinamis di halaman.
+
+Dengan materi di atas, modul COTS melatih kemampuan full-stack dasar: membangun backend API, mengelola data, serta membuat antarmuka web interaktif dalam satu proyek terpadu.
+
+
 ## Task 6: Toko Kelontong Pak Cik dan Aimar
 
 ### Source Code index.ejs

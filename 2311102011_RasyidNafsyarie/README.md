@@ -2,7 +2,7 @@
   <br />
   <h1>LAPORAN PRAKTIKUM <br> APLIKASI BERBASIS PLATFORM </h1>
   <br />
-  <h3>MODUL 6 <br> JAVASCRIPT & JQUERY </h3>
+  <h3>MODUL 6 <br> COTS </h3>
   <br />
   <img width="512" height="512" alt="telyu" src="https://github.com/user-attachments/assets/724a3291-bcf9-448d-a395-3886a8659d79" />
   <br />
@@ -33,17 +33,19 @@
 
 <hr>
 
-# Dasar Teori Javascript & JQUERY
+# Dasar Teori COTS
+A. Pengertian COTS (Commercial Off-The-Shelf)
 
-## Pengertian Javascript
-JavaScript adalah bahasa pemrograman yang digunakan untuk membuat halaman web menjadi interaktif dan dinamis. JavaScript berjalan di sisi client (browser), sehingga dapat memanipulasi elemen HTML dan CSS secara langsung tanpa perlu reload halaman.
+COTS (Commercial Off-The-Shelf) adalah produk perangkat lunak atau perangkat keras yang sudah jadi dan tersedia secara umum di pasar, yang dapat langsung digunakan oleh pengguna tanpa perlu dikembangkan dari awal.
 
-## Pengertian JQUERY
-jQuery adalah library JavaScript yang dibuat untuk menyederhanakan penulisan kode JavaScript, terutama dalam manipulasi DOM, event handling, dan AJAX.
+Produk COTS biasanya dikembangkan oleh vendor atau perusahaan tertentu dan didistribusikan secara luas untuk memenuhi kebutuhan umum berbagai organisasi.
 
-Dengan jQuery, penulisan kode menjadi lebih singkat dan mudah dibanding JavaScript biasa.
+Contoh:
 
-JavaScript adalah bahasa utama untuk membuat web menjadi interaktif, sedangkan jQuery adalah library yang membantu menyederhanakan penggunaan JavaScript. Keduanya sering digunakan bersama dalam pengembangan web untuk meningkatkan efisiensi dan kemudahan dalam coding.
+Software: Microsoft Office, Adobe Photoshop
+Framework/Library: Bootstrap, jQuery
+Sistem: ERP, CMS (WordPress)
+
 
 
 ### Source code 

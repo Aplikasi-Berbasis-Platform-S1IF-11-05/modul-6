@@ -5,7 +5,7 @@ Proyek ini dibangun menggunakan **Express.js**, **jQuery**, **Bootstrap 5**, dan
 
 ## Deskripsi Proyek
 
-Proyek ini merupakan implementasi CRUD inventaris untuk kebutuhan praktikum Modul 6.  
+Proyek ini merupakan implementasi CRUD inventaris untuk kebutuhan praktikum Modul 7.  
 Fokus utama aplikasi adalah pengelolaan produk toko melalui antarmuka tabel interaktif, form tambah dan ubah data, serta modal konfirmasi hapus.
 
 ## Fitur Utama

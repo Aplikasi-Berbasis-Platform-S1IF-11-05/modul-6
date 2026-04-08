@@ -2,7 +2,7 @@
   <br />
   <h1>LAPORAN PRAKTIKUM <br> APLIKASI BERBASIS PLATFORM </h1>
   <br />
-  <h3>MODUL 5 <br> JAVASCRIPT & JQUERY </h3>
+  <h3>MODUL 6 <br> COTS </h3>
   <br />
   <img width="512" height="512" alt="telyu" src="https://github.com/user-attachments/assets/724a3291-bcf9-448d-a395-3886a8659d79" />
   <br />
@@ -36,13 +36,16 @@
 # Dasar Teori
 
 <p align="justify">
-JavaScript adalah bahasa pemrograman yang digunakan untuk membuat halaman web menjadi interaktif dan dinamis. Dengan JavaScript, pengembang dapat memanipulasi elemen HTML dan CSS, menangani event seperti klik atau input pengguna, serta mengelola data secara langsung di sisi klien (client-side). Bahasa ini berjalan di browser dan menjadi salah satu teknologi utama dalam pengembangan web modern bersama HTML dan CSS. Selain itu, JavaScript juga mendukung berbagai konsep pemrograman seperti fungsi, objek, dan asynchronous programming yang memungkinkan pembuatan aplikasi web yang kompleks.
+Coding on the spot adalah metode pengembangan aplikasi secara cepat tanpa perencanaan kompleks. Pendekatan ini memanfaatkan teknologi ringan seperti Express.js untuk membuat server dan API dengan mudah.
 </p>
 
 <p align="justify">
-jQuery adalah library JavaScript yang dirancang untuk menyederhanakan penulisan kode JavaScript, terutama dalam manipulasi DOM, penanganan event, animasi, dan komunikasi AJAX. Dengan sintaks yang lebih singkat dan mudah dipahami, jQuery membantu pengembang mengurangi penulisan kode yang panjang dan rumit. Library ini juga kompatibel dengan berbagai browser, sehingga memudahkan pengembangan tanpa harus menangani perbedaan implementasi di setiap browser secara manual.
+Aplikasi menggunakan konsep client-server, di mana frontend (HTML, Bootstrap, jQuery) berinteraksi dengan backend melalui HTTP request (GET, POST, PUT, DELETE) untuk melakukan operasi CRUD. Data disimpan dalam file JSON sebagai database sederhana agar tidak perlu setup database tambahan.
 </p>
 
+<p align="justify">
+Penggunaan AJAX memungkinkan pertukaran data secara real-time tanpa reload halaman, sehingga proses pengembangan menjadi lebih cepat, sederhana, dan efisien.
+</p>
 
 
 ## Task 6: Toko Kelontong Pak Cik dan Aimar Loh yaa

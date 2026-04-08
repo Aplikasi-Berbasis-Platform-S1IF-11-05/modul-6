@@ -3,7 +3,7 @@
   <br />
   <h1>LAPORAN PRAKTIKUM <br> APLIKASI BERBASIS PLATFORM </h1>
   <br />
-  <h3>MODUL 6 <br> JAVASCRIPT & JQUERY </h3>
+  <h3>MODUL 6 <br> COTS</h3>
   <br />
   <img width="512" height="512" alt="telyu" src="https://github.com/user-attachments/assets/724a3291-bcf9-448d-a395-3886a8659d79" />
   <br />
@@ -36,17 +36,15 @@
 
 # Dasar Teori
 
-JavaScript merupakan bahasa pemrograman yang digunakan untuk membuat halaman web menjadi interaktif dan dinamis. Dengan JavaScript, pengguna dapat melakukan manipulasi terhadap elemen halaman melalui DOM (Document Object Model), seperti menampilkan data, menangani input pengguna, serta mengubah tampilan secara langsung tanpa perlu melakukan reload halaman.
+Pada Task 6 ini, diberikan studi kasus untuk membuat web inventori Toko Kelontong milik Pak Cik dan Mas Aimar. Project ini dapat dibangun menggunakan framework seperti CodeIgniter, Laravel, ExpressJS, NestJS, dan lainnya. Dalam praktikum ini digunakan **Laravel** sebagai framework backend. Web inventori ini memiliki fitur CRUD (Create, Read, Update, Delete) untuk mengelola data produk toko, dengan tampilan berupa DataTable, form create, form edit, dan konfirmasi modal untuk delete. Project ini **wajib menggunakan jQuery** untuk DOM manipulation serta **Bootstrap** untuk styling CSS. Data produk disimpan dalam bentuk **file JSON** (bukan database).
 
-jQuery adalah library JavaScript yang mempermudah proses manipulasi DOM, event handling, dan komunikasi dengan server menggunakan AJAX. Dengan sintaks yang lebih sederhana, jQuery memungkinkan pengembangan fitur interaktif seperti pengambilan data, penambahan data, pengeditan, dan penghapusan data (CRUD) secara lebih efisien.
+Laravel adalah framework PHP yang mengikuti arsitektur MVC (Model-View-Controller) dan menyediakan berbagai fitur bawaan seperti routing, validasi, Blade templating engine, serta manajemen file melalui Storage facade. Dalam praktikum ini, Laravel digunakan sebagai backend untuk menangani request dari client seperti mengambil data (GET), menambah data (POST), mengubah data (PUT), dan menghapus data (DELETE). Data disimpan dalam bentuk file JSON menggunakan Storage facade sehingga tidak memerlukan database.
 
-Bootstrap merupakan framework CSS yang digunakan untuk membangun tampilan web yang responsif dan modern. Bootstrap menyediakan berbagai komponen siap pakai seperti tombol, tabel, card, dan modal, sehingga mempermudah pembuatan antarmuka yang rapi tanpa harus menulis CSS secara manual.
+jQuery adalah library JavaScript yang digunakan untuk manipulasi DOM, event handling, dan komunikasi dengan server menggunakan AJAX. jQuery digunakan untuk menangani semua interaksi pengguna seperti menampilkan modal, mengirim data form, serta memperbarui tampilan tabel secara dinamis tanpa reload halaman.
 
-Laravel adalah framework PHP yang mengikuti arsitektur MVC (Model-View-Controller) dan menyediakan berbagai fitur bawaan seperti routing, validasi, Blade templating engine, serta manajemen file melalui Storage facade. Dalam praktikum ini, Laravel digunakan sebagai backend untuk menangani request dari client seperti mengambil data (GET), menambah data (POST), mengubah data (PUT), dan menghapus data (DELETE). Data disimpan dalam bentuk file JSON sehingga tidak memerlukan database.
+Bootstrap merupakan framework CSS yang digunakan untuk membangun tampilan web yang responsif dan modern. Bootstrap menyediakan berbagai komponen siap pakai seperti tombol, tabel, card, navbar, dan modal, sehingga mempermudah pembuatan antarmuka yang rapi.
 
-DataTables adalah plugin jQuery yang digunakan untuk membuat tabel HTML menjadi interaktif dengan fitur pencarian, sorting, dan pagination secara otomatis. DataTables dapat terintegrasi dengan Bootstrap untuk menghasilkan tampilan tabel yang modern dan responsif.
-
-Konsep CRUD (Create, Read, Update, Delete) merupakan dasar dalam pengelolaan data pada aplikasi. Pada praktikum ini, CRUD diimplementasikan dengan jQuery sebagai penghubung antara frontend dan backend melalui AJAX, serta Laravel sebagai server yang mengelola data JSON.
+DataTables adalah plugin jQuery yang digunakan untuk membuat tabel HTML menjadi interaktif dengan fitur pencarian, sorting, dan pagination secara otomatis. DataTables terintegrasi dengan Bootstrap untuk menghasilkan tampilan tabel yang modern dan responsif.
 
 # Tugas 6
 ## 1. Source Kode ProductController.php

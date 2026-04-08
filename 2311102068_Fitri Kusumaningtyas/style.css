@@ -1,0 +1,97 @@
+body {
+    background: linear-gradient(135deg,#e3f2fd,#fce4ec);
+    font-family: 'Roboto', sans-serif;
+}
+ /*Fitri Kusumaningtyas 2311102068*/
+.card-custom{
+    border-radius:20px;
+    box-shadow:0 12px 25px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    background: #fff0f5; 
+}
+.card-custom:hover{
+    transform: translateY(-5px);
+    box-shadow:0 20px 30px rgba(0,0,0,0.15);
+}
+
+.title{
+    font-weight:700;
+    color:#d63384; 
+}
+
+.btn-primary{
+    border-radius:50px;
+    padding:8px 20px;
+    background: #ff85c1; 
+    border:none;
+    transition:0.3s;
+}
+.btn-primary:hover{
+    background: #e754a4;
+}
+
+.table thead{
+    background:linear-gradient(45deg,#ff85c1,#d63384); 
+    color:white;
+}
+
+.table{
+    border-radius:10px;
+    overflow:hidden;
+    background:white;
+    box-shadow:0 4px 10px rgba(0,0,0,0.05);
+}
+
+.table tbody tr:hover{
+    background: #ffe6f0;
+}
+
+input.form-control{
+    border-radius:10px;
+}
+
+.btn-edit{
+    background:#f7c6d0;
+    color:white;
+    border:none;
+    border-radius:10px;
+    padding:4px 12px;
+    transition:0.3s;
+}
+.btn-edit:hover{
+    background:#eaa3b8;
+}
+
+.btn-delete{
+    background:#f5a6a6;
+    color:white;
+    border:none;
+    border-radius:10px;
+    padding:4px 12px;
+    transition:0.3s;
+}
+.btn-delete:hover{
+    background:#f08383;
+}
+
+.badge-stok {
+    padding:5px 10px;
+    border-radius:15px;
+    font-size:0.9rem;
+    color:white;
+}
+
+.badge-habis{
+    background:#ff6f91;
+}
+
+.badge-ada{
+    background:#ff85c1;
+}
+
+.toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+}

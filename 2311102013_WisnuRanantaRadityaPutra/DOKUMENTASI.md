@@ -2,6 +2,7 @@
 
 <hr>
 
+
 ## Fitur Aplikasi
 1. CRUD : Pengguna dapat menambah, melihat, mengedit, dan menghapus data barang.
 2. Interaksi Tanpa Loading (SPA) : Menggunakan teknologi AJAX sehingga halaman tidak perlu dimuat ulang (*refresh*) saat melakukan aksi simpan, ubah, atau hapus data.

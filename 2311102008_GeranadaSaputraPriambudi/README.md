@@ -2,7 +2,7 @@
   <br />
   <h1>LAPORAN PRAKTIKUM <br> APLIKASI BERBASIS PLATFORM </h1>
   <br />
-  <h3>MODUL 6 <br> JAVASCRIPT & JQUERY </h3>
+  <h3>MODUL 6 <br> COTS </h3>
   <br />
   <img width="512" height="512" alt="telyu" src="https://github.com/user-attachments/assets/724a3291-bcf9-448d-a395-3886a8659d79" />
   <br />
@@ -33,33 +33,13 @@
 
 <hr>
 
-# Dasar Teori Javascript & JQUERY
+## Dasar Teori COTS
 
-1. JavaScript (JS)
-JavaScript adalah bahasa pemrograman high-level, scripting, dan interpreted yang bersifat client-side. Artinya, kode dijalankan langsung di browser pengguna tanpa perlu diproses oleh server terlebih dahulu untuk interaksi UI.
+Commercial Off-The-Shelf (COTS) adalah konsep dalam pengembangan sistem yang mengacu pada penggunaan perangkat lunak atau komponen yang telah tersedia di pasar dan dapat langsung diimplementasikan tanpa proses pengembangan dari awal. Produk COTS umumnya dirancang untuk memenuhi kebutuhan umum berbagai pengguna sehingga bersifat generik dan dapat digunakan pada berbagai jenis aplikasi. Contoh penggunaan COTS dalam pengembangan aplikasi meliputi pemanfaatan framework antarmuka pengguna, library pemrograman, serta layanan pihak ketiga seperti sistem autentikasi dan database berbasis cloud.
 
-Manipulasi DOM (Document Object Model): JavaScript memungkinkan pengembang untuk mengubah konten, struktur, dan gaya HTML secara dinamis.
-Event Handling: JS dapat mendeteksi dan merespons tindakan pengguna seperti klik mouse, input keyboard, atau pemuatan halaman.
-Asynchronous: Dengan fitur asinkron, JS dapat melakukan tugas di latar belakang tanpa menghentikan eksekusi kode lainnya.
+Pemanfaatan COTS memberikan keuntungan signifikan dalam hal percepatan proses pengembangan dan efisiensi biaya, karena pengembang tidak perlu membangun seluruh sistem secara mandiri. Selain itu, produk COTS biasanya telah melalui proses pengujian dan memiliki dokumentasi yang baik, sehingga lebih stabil dan mudah diintegrasikan. Namun demikian, penggunaan COTS juga memiliki beberapa keterbatasan, seperti kurangnya fleksibilitas dalam penyesuaian fitur sesuai kebutuhan spesifik serta potensi ketergantungan terhadap vendor terkait pembaruan dan dukungan sistem.
 
-2. jQuery
-jQuery adalah pustaka (library) JavaScript lintas browser yang dirancang untuk menyederhanakan penulisan kode JavaScript. Motto utamanya adalah "Write Less, Do More".
-
-Sintaks Ringkas: Mengganti operasi DOM yang panjang (seperti document.getElementById) dengan sintaks yang jauh lebih pendek (seperti $('#id')).
-Cross-Browser Compatibility: Menangani perbedaan cara kerja JavaScript di berbagai browser (Chrome, Firefox, Safari, dll) secara otomatis.
-Efek & Animasi: Menyediakan fungsi bawaan untuk membuat animasi transisi seperti fade, slide, dan toggle dengan mudah.
-
-3. AJAX (Asynchronous JavaScript and XML)
-AJAX bukanlah bahasa pemrograman, melainkan teknik yang menggabungkan JavaScript dan XML (atau sekarang lebih sering menggunakan JSON) untuk memperbarui bagian dari halaman web tanpa reload seluruh halaman.
-
-User Experience (UX): Membuat aplikasi terasa lebih cepat dan responsif layaknya aplikasi desktop.
-Data Transfer: Memungkinkan aplikasi untuk mengirim dan menerima data dari server di latar belakang.
-
-4. JSON (JavaScript Object Notation)
-JSON adalah format pertukaran data yang ringan, mudah dibaca manusia, dan mudah diproses oleh mesin. Walaupun berasal dari JavaScript, format ini didukung oleh hampir semua bahasa pemrograman modern (termasuk Python/Flask).
-
-Struktur Data: Menggunakan format pasangan kunci dan nilai (key-value pairs) serta array.
-Kegunaan: Sangat populer digunakan sebagai format database flat-file sederhana atau untuk pengiriman data melalui API.
+Dalam implementasinya, pendekatan COTS sering dikombinasikan dengan pengembangan perangkat lunak kustom untuk menghasilkan sistem yang optimal. Strategi ini memungkinkan pengembang memanfaatkan keunggulan COTS untuk fitur standar, sementara fitur yang bersifat khusus tetap dikembangkan secara mandiri. Oleh karena itu, pemilihan COTS harus mempertimbangkan aspek kompatibilitas, keamanan, serta kemampuan sistem untuk berkembang di masa depan.
 
 
 ### Source code 
