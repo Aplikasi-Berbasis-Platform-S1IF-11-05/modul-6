@@ -2,7 +2,7 @@
   <br />
   <h1>LAPORAN PRAKTIKUM <br> APLIKASI BERBASIS PLATFORM </h1>
   <br />
-  <h3>MODUL 6 <br> JAVASCRIPT & JQUERY </h3>
+  <h3>MODUL 6 <br> COTS </h3>
   <br />
   <img width="512" height="512" alt="telyu" src="https://github.com/user-attachments/assets/724a3291-bcf9-448d-a395-3886a8659d79" />
   <br />
@@ -34,7 +34,9 @@
 <hr>
 
 # Dasar Teori
-penggunaan JavaScript sebagai bahasa pemrograman utama yang berfungsi untuk membuat halaman web menjadi interaktif dan dinamis. JavaScript digunakan baik di sisi client (browser) maupun server melalui Node.js sebagai runtime environment. Untuk mempermudah pembuatan server dan pengelolaan request, digunakan framework Express.js yang mendukung konsep REST API dalam proses komunikasi antara client dan server melalui metode HTTP seperti GET, POST, PUT, dan DELETE. Data dalam aplikasi disimpan menggunakan format JSON yang ringan dan mudah diproses. Pada sisi antarmuka, digunakan HTML sebagai struktur halaman dan Bootstrap sebagai framework CSS untuk menghasilkan tampilan yang responsif dan menarik. Selain itu, jQuery digunakan untuk menyederhanakan manipulasi DOM, penanganan event, serta implementasi AJAX yang memungkinkan pertukaran data dengan server tanpa perlu memuat ulang halaman. Untuk meningkatkan interaktivitas dalam penyajian data, digunakan plugin DataTables yang menyediakan fitur pencarian, pengurutan, dan pagination pada tabel. Dengan dasar teori tersebut, aplikasi dapat berjalan secara efisien dalam mengelola data berbasis web.
+Coding On The Spot adalah metode atau teknik pemrograman di mana seorang programmer diminta untuk menulis kode secara langsung pada saat itu juga, biasanya tanpa persiapan yang panjang. Kegiatan ini sering digunakan dalam proses wawancara kerja, ujian praktik, maupun kompetisi untuk menguji kemampuan logika, pemahaman konsep, serta kecepatan dalam menyelesaikan masalah pemrograman. Coding On The Spot menekankan kemampuan berpikir kritis, pemecahan masalah secara cepat, serta ketelitian dalam menulis sintaks yang benar, sehingga mencerminkan kemampuan nyata seorang programmer dalam situasi langsung.
+
+Pengembang dituntut untuk langsung mengimplementasikan fitur secara praktis berdasarkan kebutuhan yang diberikan, seperti membuat CRUD produk, menampilkan data dalam bentuk datatable, serta mengelola interaksi menggunakan jQuery dan Bootstrap. Metode ini menekankan kemampuan memahami kebutuhan sistem dengan cepat, kemudian menerjemahkannya ke dalam kode yang fungsional, seperti manipulasi DOM untuk menampilkan data JSON, pembuatan form create dan edit, serta penggunaan modal untuk konfirmasi delete. Dengan COTS, mahasiswa tidak hanya memahami teori, tetapi juga mengasah keterampilan implementasi langsung dalam membangun aplikasi web yang terstruktur, interaktif, dan sesuai dengan kebutuhan pengguna.
 
 ### Source code 
 ```js
