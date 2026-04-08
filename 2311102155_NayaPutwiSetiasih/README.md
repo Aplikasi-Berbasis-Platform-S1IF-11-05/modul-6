@@ -36,6 +36,8 @@
 
 # Dasar Teori
 
+COTS adalah perangkat lunak atau sistem yang sudah jadi dan dijual secara umum, sehingga bisa langsung digunakan tanpa perlu membuat dari nol.
+
 JavaScript merupakan bahasa pemrograman yang digunakan untuk membuat halaman web menjadi interaktif dan dinamis. Dengan JavaScript, pengguna dapat melakukan manipulasi terhadap elemen halaman melalui DOM (Document Object Model), seperti menampilkan data, menangani input pengguna, serta mengubah tampilan secara langsung tanpa perlu melakukan reload halaman.
 
 jQuery adalah library JavaScript yang mempermudah proses manipulasi DOM, event handling, dan komunikasi dengan server menggunakan AJAX. Dengan sintaks yang lebih sederhana, jQuery memungkinkan pengembangan fitur interaktif seperti pengambilan data, penambahan data, pengeditan, dan penghapusan data (CRUD) secara lebih efisien.
