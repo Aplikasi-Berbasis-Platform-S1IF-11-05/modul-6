@@ -2,7 +2,7 @@
   <br />
   <h1>LAPORAN PRAKTIKUM <br> APLIKASI BERBASIS PLATFORM </h1>
   <br />
-  <h3>MODUL 6 <br> JAVASCRIPT & JQUERY </h3>
+  <h3>MODUL 6 <br> COTS </h3>
   <br />
   <img width="512" height="512" alt="telyu" src="https://github.com/user-attachments/assets/724a3291-bcf9-448d-a395-3886a8659d79" />
   <br />
@@ -33,110 +33,13 @@
 
 <hr>
 
-# Dasar Teori JavaScript dan jQuery
+## Dasar Teori COTS
 
-## 1. JavaScript (JS)
+COTS (Commercial Off-The-Shelf) merupakan pendekatan dalam pengembangan perangkat lunak yang memanfaatkan produk atau komponen yang sudah tersedia di pasaran. Alih-alih membangun seluruh sistem dari awal, pengembang dapat langsung menggunakan solusi yang telah dibuat oleh vendor untuk memenuhi kebutuhan tertentu. Pendekatan ini banyak digunakan dalam pengembangan aplikasi modern karena dinilai lebih praktis dan efisien, terutama untuk fitur-fitur umum yang tidak memerlukan logika khusus.
 
-JavaScript adalah bahasa pemrograman *high-level*, *scripting*, *dynamically-typed*, dan *interpreted* yang dikembangkan pertama kali oleh **Brendan Eich** di Netscape pada tahun 1995. Saat ini, JavaScript telah menjadi salah satu bahasa pemrograman paling populer di dunia dan merupakan pilar utama dalam pengembangan web modern bersama HTML dan CSS. JavaScript memungkinkan pengembang untuk mengimplementasikan fitur-fitur kompleks pada halaman web, seperti pembaruan konten secara dinamis, validasi formulir, animasi, serta komunikasi asinkron dengan server.
+Dalam penggunaannya, COTS membantu mempercepat proses pengembangan karena sebagian besar fungsi dasar sudah tersedia dan siap digunakan. Hal ini memungkinkan tim pengembang untuk lebih fokus pada pengembangan fitur utama yang menjadi nilai unik dari aplikasi yang dibuat. Namun demikian, penggunaan COTS juga perlu dipertimbangkan secara matang, karena tidak semua solusi yang tersedia dapat sepenuhnya menyesuaikan kebutuhan sistem. Selain itu, adanya ketergantungan terhadap vendor juga dapat menjadi kendala jika terjadi perubahan kebijakan atau dukungan terhadap produk tersebut.
 
-JavaScript distandarisasi oleh **ECMA International** dengan nama resmi **ECMAScript (ES)**. Versi modern yang banyak digunakan saat ini adalah **ES6 (ECMAScript 2015)** ke atas, yang memperkenalkan banyak fitur penting seperti `let`/`const`, *arrow function*, *template literals*, *destructuring*, *promise*, dan *async/await*.
-
-### 1.1. Karakteristik Utama JavaScript
-
-| Karakteristik | Penjelasan |
-|---|---|
-| **Client-Side Scripting** | Kode JavaScript dieksekusi langsung di browser pengguna (*client*), bukan di server. Hal ini mengurangi beban server dan memberikan respon interaksi yang lebih cepat kepada pengguna. |
-| **Interpreted** | JavaScript tidak memerlukan proses kompilasi terpisah sebelum dijalankan. Browser memiliki *JavaScript Engine* (seperti V8 di Chrome, SpiderMonkey di Firefox) yang membaca dan mengeksekusi kode secara langsung. |
-| **Dynamically Typed** | Tipe data variabel ditentukan secara otomatis saat program berjalan (*runtime*), bukan saat penulisan kode. Sebuah variabel dapat menyimpan tipe data yang berbeda-beda sepanjang eksekusi program. |
-| **Event-Driven** | JavaScript dirancang untuk merespons berbagai kejadian (*event*) seperti klik mouse (`click`), input keyboard (`keydown`), pengiriman formulir (`submit`), atau perubahan nilai input (`change`). |
-| **Object-Based** | JavaScript mendukung paradigma pemrograman berorientasi objek (*Object-Oriented Programming*) berbasis prototipe (*prototype-based*), bukan berbasis kelas seperti Java atau C++. |
-
-### 1.2. Tipe Data dalam JavaScript
-
-JavaScript memiliki beberapa tipe data dasar:
-- **Primitive Types**: `String`, `Number`, `Boolean`, `Null`, `Undefined`, `Symbol`, dan `BigInt`.
-- **Reference Types**: `Object`, `Array`, dan `Function`.
-
-Contoh deklarasi variabel:
-```js
-let nama = "Willyan";          // String
-const harga = 15000;           // Number
-let tersedia = true;           // Boolean
-let produk = {                 // Object
-    nama: "Indomie",
-    harga: 3500,
-    stok: 100
-};
-let daftarProduk = ["Sabun", "Shampoo", "Pasta Gigi"]; // Array
-```
-
-### 1.3. Fungsi (Function)
-
-Fungsi adalah blok kode yang dapat digunakan kembali (*reusable*) untuk melakukan tugas tertentu. Dalam JavaScript modern (ES6+), terdapat dua cara umum untuk mendefinisikan fungsi:
-
-```js
-// Function Declaration
-function hitungTotal(harga, jumlah) {
-    return harga * jumlah;
-}
-
-// Arrow Function (ES6+)
-const formatRupiah = (angka) => {
-    return new Intl.NumberFormat('id-ID', {
-        style: 'currency',
-        currency: 'IDR'
-    }).format(angka);
-};
-```
-
-### 1.4. DOM (Document Object Model)
-
-**DOM** (*Document Object Model*) adalah representasi terstruktur dari dokumen HTML yang dibuat oleh browser dalam bentuk pohon objek (*tree structure*). Setiap elemen HTML direpresentasikan sebagai **node** di dalam pohon DOM, dan JavaScript dapat mengakses serta memanipulasi node-node tersebut secara dinamis.
-
-Kemampuan manipulasi DOM meliputi:
-- **Mengakses elemen**: menggunakan `document.getElementById()`, `document.querySelector()`, atau `document.querySelectorAll()`.
-- **Mengubah konten**: menggunakan properti `.innerHTML`, `.textContent`, atau `.innerText`.
-- **Mengubah atribut**: menggunakan metode `.setAttribute()` atau properti langsung seperti `.src`, `.href`.
-- **Mengubah gaya**: menggunakan properti `.style` atau `.classList`.
-- **Menambah/menghapus elemen**: menggunakan `.appendChild()`, `.removeChild()`, atau `.remove()`.
-
-Contoh manipulasi DOM dengan JavaScript murni:
-```js
-// Mengambil elemen berdasarkan ID
-let judul = document.getElementById('judul');
-judul.textContent = 'Toko Kelontong Pak Cik & Aimar';
-
-// Menambahkan class baru pada elemen
-judul.classList.add('fw-bold', 'text-primary');
-
-// Membuat elemen baru
-let baris = document.createElement('tr');
-baris.innerHTML = '<td>1</td><td>Indomie</td><td>Rp 3.500</td>';
-document.getElementById('productTableBody').appendChild(baris);
-```
-
----
-
-## 2. jQuery
-
-jQuery adalah *library* (*pustaka*) JavaScript yang dikembangkan oleh **John Resig** dan dirilis pertama kali pada tahun **2006**. jQuery dirancang untuk menyederhanakan penulisan kode JavaScript dengan moto utamanya: **"Write Less, Do More"** (Tulis Lebih Sedikit, Lakukan Lebih Banyak). Library ini menangani banyak operasi kompleks dalam JavaScript murni — seperti manipulasi DOM, penanganan event, animasi, dan komunikasi AJAX — dengan sintaks yang jauh lebih ringkas dan intuitif.
-
-jQuery diakses melalui fungsi global `$()` atau `jQuery()`, yang merupakan *selector engine* untuk memilih elemen DOM menggunakan sintaks mirip CSS.
-
-## 3. AJAX (Asynchronous JavaScript and XML)
-
-**AJAX** (*Asynchronous JavaScript and XML*) adalah teknik pengembangan web yang memungkinkan halaman web untuk berkomunikasi dengan server di latar belakang secara **asinkron** — artinya proses pengiriman dan penerimaan data terjadi tanpa harus memuat ulang (*reload*) seluruh halaman. Teknik ini pertama kali dipopulerkan oleh **Jesse James Garrett** pada tahun 2005.
-
-Meskipun namanya menyebutkan XML, dalam praktik modern AJAX lebih banyak menggunakan format **JSON** (*JavaScript Object Notation*) sebagai format pertukaran data karena lebih ringan dan mudah diproses oleh JavaScript.
-
-### 3.1. Cara Kerja AJAX
-
-Alur kerja AJAX dapat dijelaskan sebagai berikut:
-1. **Event terjadi** di halaman web (misalnya, pengguna menekan tombol "Tambah Produk").
-2. JavaScript membuat objek **XMLHttpRequest** (atau menggunakan **Fetch API** / **jQuery AJAX**).
-3. Objek tersebut mengirimkan **HTTP Request** ke server secara asinkron.
-4. Server memproses permintaan dan mengirimkan **HTTP Response** kembali (biasanya dalam format JSON).
-5. JavaScript menerima data respons dan **memperbarui DOM** tanpa *reload* halaman.
+Oleh karena itu, pemanfaatan COTS biasanya tidak berdiri sendiri, melainkan dikombinasikan dengan pengembangan kustom agar sistem tetap fleksibel dan sesuai kebutuhan. Dengan strategi ini, pengembang dapat mengambil keuntungan dari kemudahan penggunaan COTS sekaligus menjaga kontrol terhadap bagian sistem yang bersifat kritis. Pendekatan yang seimbang ini menjadi kunci dalam membangun aplikasi yang efisien namun tetap adaptif terhadap perubahan di masa depan.
 
 ### Source code 
 ```py
