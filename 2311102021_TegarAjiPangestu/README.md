@@ -2,7 +2,7 @@
   <br />
   <h1>LAPORAN PRAKTIKUM <br> APLIKASI BERBASIS PLATFORM </h1>
   <br />
-  <h3>MODUL 6 <br> JAVASCRIPT & JQUERY </h3>
+  <h3>MODUL 6 <br> COTS </h3>
   <br />
   <img width="512" height="512" alt="telyu" src="https://github.com/user-attachments/assets/724a3291-bcf9-448d-a395-3886a8659d79" />
   <br />
@@ -35,9 +35,11 @@
 
 # Dasar Teori
 
-JavaScript adalah bahasa pemrograman yang digunakan untuk membuat halaman web menjadi interaktif dan dinamis. Dengan JavaScript, pengembang dapat memanipulasi elemen HTML dan CSS secara langsung melalui browser, seperti menampilkan animasi, memvalidasi form, hingga merespons aksi pengguna seperti klik atau input. JavaScript berjalan di sisi klien (client-side), sehingga prosesnya terjadi di perangkat pengguna tanpa harus selalu berkomunikasi dengan server, meskipun saat ini juga bisa digunakan di sisi server dengan teknologi seperti Node.js.
+COTS merupakan pendekatan pengembangan aplikasi yang berfokus pada kecepatan dengan memanfaatkan teknologi ringan seperti Express.js untuk membuat server dan API secara sederhana. Aplikasi dibangun menggunakan arsitektur client-server, di mana frontend berinteraksi dengan backend melalui protokol HTTP (GET, POST, PUT, DELETE) untuk menjalankan operasi CRUD, serta menggunakan file JSON sebagai media penyimpanan data agar lebih praktis tanpa harus memakai database yang kompleks.
 
-jQuery adalah sebuah library JavaScript yang dirancang untuk menyederhanakan penulisan kode JavaScript. Dengan jQuery, tugas-tugas seperti manipulasi DOM, penanganan event, animasi, dan AJAX menjadi lebih mudah dan ringkas dibandingkan menggunakan JavaScript murni. jQuery menggunakan sintaks yang sederhana dan mudah dipahami, sehingga sangat membantu terutama bagi pemula dalam mengembangkan website yang interaktif dengan lebih cepat dan efisien..
+Pemanfaatan AJAX memungkinkan proses pertukaran data berlangsung secara real-time tanpa perlu memuat ulang halaman, sehingga aplikasi menjadi lebih responsif dan efisien.
+
+Pendekatan ini juga sejalan dengan konsep COTS (Commercial Off-The-Shelf), yaitu penggunaan komponen atau perangkat lunak yang sudah tersedia untuk mempercepat proses pengembangan. Meskipun dapat menghemat waktu dan biaya, COTS memiliki keterbatasan dalam hal fleksibilitas serta menimbulkan ketergantungan pada pihak ketiga.
 # Tugas 5 - Toko Kelontong Pak Cik
 ## Source code productcontroller
 ```<!-- 2311102021
