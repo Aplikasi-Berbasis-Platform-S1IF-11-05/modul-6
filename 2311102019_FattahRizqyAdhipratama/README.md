@@ -37,11 +37,11 @@
 # Dasar Teori
 
 <p align="justify">
-Framework Flask merupakan framework web berbasis Python yang ringan dan dirancang untuk mempermudah pengembangan aplikasi berbasis client-server. Flask mendukung pembuatan routing, pengelolaan request HTTP, serta pengembangan API untuk menjalankan operasi CRUD (Create, Read, Update, Delete). Pada sisi antarmuka, Bootstrap digunakan untuk membangun tampilan web yang responsif dan modern, sedangkan jQuery membantu manipulasi DOM serta mempermudah komunikasi data asynchronous melalui AJAX agar interaksi antara frontend dan backend berjalan lebih efisien.
+Coding on the spot merupakan metode pengembangan perangkat lunak yang menekankan proses pembuatan aplikasi secara cepat dan langsung pada saat implementasi, tanpa melalui perencanaan yang terlalu kompleks. Pendekatan ini sering digunakan dalam kegiatan praktikum karena memungkinkan pengembang fokus pada penyelesaian fungsi utama sistem dalam waktu singkat. Dengan memanfaatkan framework seperti Flask, proses pembuatan backend, routing, serta layanan API dapat dilakukan dengan lebih sederhana dan efisien.
 </p>
 
 <p align="justify">
-Konsep CRUD pada aplikasi digunakan untuk mengelola data produk seperti nama, stok, dan harga melalui proses tambah, tampil, ubah, dan hapus data. Penyimpanan data menggunakan file JSON dipilih sebagai alternatif database sederhana karena mudah dibaca, ringan, dan tidak memerlukan instalasi sistem basis data tambahan. Selain itu, penggunaan AJAX memungkinkan pertukaran data dilakukan secara real-time tanpa reload halaman, sehingga tabel produk dapat diperbarui secara dinamis dan pengalaman pengguna menjadi lebih praktis serta responsif.
+Dalam penerapannya, coding on the spot biasanya didukung oleh teknologi frontend seperti Bootstrap dan jQuery untuk mempercepat pembuatan antarmuka yang responsif serta interaktif. Komunikasi antara frontend dan backend dilakukan menggunakan request HTTP untuk operasi CRUD, sedangkan penyimpanan data dapat memanfaatkan file JSON sebagai database sederhana. Pendekatan ini sangat cocok untuk pengembangan aplikasi skala kecil seperti sistem inventaris, karena prosesnya cepat, praktis, dan mudah diuji secara langsung.
 </p>
 
 # Tugas 6 - Toko Kelontong Pak Cik dan Aimar Loh yaa
