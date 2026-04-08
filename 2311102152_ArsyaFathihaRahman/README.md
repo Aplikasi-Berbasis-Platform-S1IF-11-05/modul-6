@@ -2,7 +2,7 @@
   <br />
   <h1>LAPORAN PRAKTIKUM <br> APLIKASI BERBASIS PLATFORM </h1>
   <br />
-  <h3>MODUL 6 <br> JAVASCRIPT & JQUERY </h3>
+  <h3>MODUL 6 <br> COTS </h3>
   <br />
   <img width="512" height="512" alt="telyu" src="https://github.com/user-attachments/assets/724a3291-bcf9-448d-a395-3886a8659d79" />
   <br />
@@ -35,6 +35,12 @@
 
 # Dasar Teori
 ## 📚 Dasar Teori
+
+### 🔹 COTS
+
+COTS (Commercial Off-The-Shelf) adalah istilah untuk produk, khususnya perangkat lunak, yang sudah dibuat dan tersedia di pasaran sehingga bisa langsung digunakan tanpa perlu dikembangkan dari awal. 
+Jadi, pengguna tinggal membeli atau mengunduh lalu langsung pakai sesuai kebutuhan.
+---
 
 ### 🔹 Laravel
 Laravel adalah framework PHP yang menggunakan konsep MVC (Model-View-Controller).  
