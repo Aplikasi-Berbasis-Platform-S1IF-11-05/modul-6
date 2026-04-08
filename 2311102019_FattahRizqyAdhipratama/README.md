@@ -2,7 +2,7 @@
   <br />
   <h1>LAPORAN PRAKTIKUM <br> APLIKASI BERBASIS PLATFORM </h1>
   <br />
-  <h3>MODUL 6 <br> JAVASCRIPT & JQUERY </h3>
+  <h3>MODUL 6 <br> COTS </h3>
   <br />
   <img width="512" height="512" alt="telyu" src="https://github.com/user-attachments/assets/724a3291-bcf9-448d-a395-3886a8659d79" />
   <br />
@@ -37,11 +37,11 @@
 # Dasar Teori
 
 <p align="justify">
-JavaScript merupakan bahasa pemrograman tingkat tinggi yang bersifat interpreted dan digunakan untuk membuat halaman web menjadi interaktif dan dinamis. JavaScript berjalan di sisi client (browser) dan memungkinkan pengembang untuk memanipulasi elemen HTML, CSS, serta merespons berbagai event seperti klik tombol, input form, animasi, validasi data, hingga komunikasi asynchronous menggunakan AJAX. Bahasa ini menjadi salah satu teknologi utama dalam pengembangan web bersama HTML dan CSS. JavaScript juga mendukung berbagai paradigma pemrograman seperti prosedural, berorientasi objek, dan fungsional, sehingga fleksibel digunakan dalam berbagai kebutuhan pengembangan aplikasi web modern.
+Framework Flask merupakan framework web berbasis Python yang ringan dan dirancang untuk mempermudah pengembangan aplikasi berbasis client-server. Flask mendukung pembuatan routing, pengelolaan request HTTP, serta pengembangan API untuk menjalankan operasi CRUD (Create, Read, Update, Delete). Pada sisi antarmuka, Bootstrap digunakan untuk membangun tampilan web yang responsif dan modern, sedangkan jQuery membantu manipulasi DOM serta mempermudah komunikasi data asynchronous melalui AJAX agar interaksi antara frontend dan backend berjalan lebih efisien.
 </p>
 
 <p align="justify">
-jQuery adalah library JavaScript yang dirancang untuk menyederhanakan penulisan kode JavaScript, terutama dalam manipulasi DOM, penanganan event, efek animasi, dan AJAX. jQuery memiliki filosofi “write less, do more”, yang berarti developer dapat menulis kode lebih singkat namun tetap menghasilkan fungsi yang kompleks. Dengan menggunakan selector yang mirip CSS, jQuery memudahkan proses pemilihan elemen HTML dan pemberian aksi pada elemen tersebut.
+Konsep CRUD pada aplikasi digunakan untuk mengelola data produk seperti nama, stok, dan harga melalui proses tambah, tampil, ubah, dan hapus data. Penyimpanan data menggunakan file JSON dipilih sebagai alternatif database sederhana karena mudah dibaca, ringan, dan tidak memerlukan instalasi sistem basis data tambahan. Selain itu, penggunaan AJAX memungkinkan pertukaran data dilakukan secara real-time tanpa reload halaman, sehingga tabel produk dapat diperbarui secara dinamis dan pengalaman pengguna menjadi lebih praktis serta responsif.
 </p>
 
 # Tugas 6 - Toko Kelontong Pak Cik dan Aimar Loh yaa
