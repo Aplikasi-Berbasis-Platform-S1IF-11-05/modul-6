@@ -36,7 +36,7 @@
 # Dasar Teori Javascript & JQUERY
 
 1. Pengertian JavaScript  
-JavaScript adalah bahasa pemrograman yang digunakan untuk membuat halaman web lebih interaktif dan dinamis. Dalam project ini, JavaScript digunakan bersama Node.js dan Express untuk menangani proses backend serta interaksi data inventori.
+JavaScript adalah bahasa pemrograman yang digunakan untuk membuat halaman web lebih interaktif dan dinamis. Dalam project ini, JavaScript digunakan bersama Node.js dan Express untuk menangani proses backend serta interaksi data inventori
 
 2. Fungsi dan Kegunaan JavaScript
 
