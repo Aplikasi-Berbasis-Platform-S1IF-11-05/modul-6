@@ -2,7 +2,7 @@
   <br />
   <h1>LAPORAN PRAKTIKUM <br> APLIKASI BERBASIS PLATFORM </h1>
   <br />
-  <h3>MODUL 6 <br> CLTS </h3>
+  <h3>MODUL 6 <br> COTS </h3>
   <br />
   <img width="512" height="512" alt="telyu" src="https://github.com/user-attachments/assets/724a3291-bcf9-448d-a395-3886a8659d79" />
   <br />
@@ -35,13 +35,13 @@
 
 ## Dasar Teori
 
-CLTS (Client-Server dan Layanan Terdistribusi) merupakan konsep arsitektur aplikasi yang memisahkan peran antara client dan server dalam pengolahan data. Client berfungsi sebagai antarmuka pengguna yang menampilkan data dan menerima input, sedangkan server bertugas memproses permintaan serta mengelola data. Komunikasi antara keduanya dilakukan melalui protokol HTTP menggunakan metode seperti GET, POST, PUT, dan DELETE yang digunakan dalam proses CRUD (Create, Read, Update, Delete).
+Coding On The Spot (COTS) adalah metode pengembangan aplikasi di mana kode ditulis dan diuji secara langsung sehingga setiap perubahan dapat segera dilihat dan diperiksa. Pendekatan ini memungkinkan programmer untuk bereksperimen dengan logika aplikasi dan menyesuaikan interaksi secara cepat. Pada implementasi COTS untuk aplikasi Toko Kelontong, JavaScript digunakan untuk mengatur logika interaktif di sisi client, termasuk menampilkan data, menambah, mengubah, dan menghapus informasi produk. Sementara itu, jQuery mempermudah manipulasi elemen HTML, pengaturan event pada tombol dan form, serta pembaruan konten halaman secara langsung sehingga tampilan aplikasi selalu responsif terhadap tindakan pengguna.
 
-Pada implementasi modul ini, konsep CLTS diterapkan menggunakan REST API sederhana dengan Node.js dan Express sebagai server, serta JavaScript (jQuery) sebagai client. Data produk disimpan dalam file JSON yang diakses melalui endpoint API, sehingga client dapat menampilkan, menambah, mengubah, dan menghapus data secara langsung. Tampilan halaman diperbarui secara otomatis sesuai perubahan data, sehingga aplikasi menjadi interaktif dan sesuai dengan prinsip layanan terdistribusi dalam CLTS.
+Di sisi server, Node.js dan Express berfungsi untuk mengelola data produk yang disimpan dalam file JSON, menyediakan layanan yang memungkinkan client mengambil dan memperbarui informasi produk. Penggunaan DataTables meningkatkan interaktivitas tabel dengan fitur pencarian, pengurutan, dan pagination sehingga manajemen data lebih efisien. Dengan kombinasi JavaScript, jQuery, dan server berbasis Node.js, metode COTS memungkinkan pembuatan aplikasi yang interaktif dan responsif serta memudahkan pengembangan dan pengujian secara real-time.
 
-## Penjelasan Kode CLTS
+## Penjelasan Kode COTS
 
-Pada implementasi ini, JavaScript dan jQuery berperan sebagai sisi client dalam arsitektur CLTS yang menangani interaksi pengguna pada halaman web, sedangkan sisi server dibangun menggunakan ExpressJS untuk mengelola data melalui REST API. Data produk diperoleh dari server dan ditampilkan secara dinamis ke dalam tabel HTML menggunakan manipulasi DOM. Setiap proses seperti penambahan, pengubahan, dan penghapusan data akan dikirim ke server menggunakan metode HTTP dan hasilnya langsung diperbarui pada tampilan. Selain itu, penggunaan DataTables membantu meningkatkan interaktivitas tabel dengan fitur pencarian, pengurutan, dan pagination sehingga memudahkan pengguna dalam mengelola data.
+JavaScript dan jQuery digunakan sebagai sisi client untuk menangani interaksi dengan halaman web, sedangkan server menggunakan ExpressJS untuk mengelola data melalui REST API. Data produk ditampilkan secara dinamis ke tabel HTML, dan setiap proses tambah, edit, atau hapus data dikirim ke server dengan metode HTTP, lalu langsung diperbarui pada tampilan. Penggunaan DataTables menambah fitur pencarian, pengurutan, dan pagination untuk mempermudah pengelolaan data.
 
 ## Task 6: Toko Kelontong Pak Cik dan Aimar
 
@@ -445,6 +445,6 @@ app.listen(PORT, () => {
 
 ### Penjelasan Code
 
-Kode JavaScript dan jQuery pada task ini berperan sebagai sisi client dalam arsitektur CLTS yang bertugas menangani interaksi pengguna pada aplikasi. Fungsi `loadProducts()` digunakan untuk mengambil data produk dari server melalui endpoint API, kemudian menampilkannya ke dalam tabel HTML secara dinamis. Fungsi `showAlert()` digunakan untuk menampilkan notifikasi kepada pengguna setelah proses CRUD berhasil dilakukan. Selain itu, DataTables digunakan untuk meningkatkan interaktivitas tabel dengan fitur pencarian, pengurutan, dan pagination, serta dilakukan proses destroy terlebih dahulu agar tabel dapat diperbarui dengan benar setiap kali data berubah.
+Kode JavaScript dan jQuery pada aplikasi ini berfungsi untuk mengatur interaksi pengguna di sisi client. Fungsi `loadProducts()` menampilkan data produk ke dalam tabel HTML secara dinamis, sementara `showAlert()` memberikan notifikasi setelah data ditambahkan, diperbarui, atau dihapus. Event handler pada tombol tambah, edit, dan hapus memungkinkan pengguna mengelola data produk langsung dari halaman, sedangkan DataTables menambahkan fitur pencarian, pengurutan, dan pagination agar tabel tetap interaktif dan mudah digunakan.
 
-Proses CRUD dilakukan melalui event yang terpasang pada elemen halaman, seperti event `submit` pada form untuk menambah atau mengubah data menggunakan metode POST dan PUT, serta event klik pada tombol edit dan delete untuk memilih data yang ingin diperbarui atau dihapus. Data yang dipilih saat proses edit akan ditampilkan kembali ke dalam form agar dapat diperbarui oleh pengguna, sedangkan proses delete diawali dengan konfirmasi untuk mencegah kesalahan penghapusan. Server yang dibangun menggunakan ExpressJS akan memproses setiap permintaan dan mengembalikan respons ke client untuk ditampilkan langsung. Dengan mekanisme ini, komunikasi antara client dan server dalam konsep CLTS berjalan dengan baik sehingga data dapat dikelola secara dinamis dan terstruktur.
+Di sisi server, Node.js dan Express mengelola data produk yang disimpan di file JSON. Fungsi `readProducts()` membaca data dari file, sedangkan `saveProducts()` menyimpan perubahan data. Endpoint server untuk menambah, memperbarui, atau menghapus produk memastikan semua perubahan langsung tercermin pada tampilan. Dengan mekanisme ini, setiap proses CRUD dapat dilakukan secara terstruktur, dan data produk selalu diperbarui sesuai aksi pengguna.
