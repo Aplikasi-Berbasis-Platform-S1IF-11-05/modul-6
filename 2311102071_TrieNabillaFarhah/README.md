@@ -2,7 +2,7 @@
   <br />
   <h1>LAPORAN PRAKTIKUM <br> APLIKASI BERBASIS PLATFORM </h1>
   <br />
-  <h3>MODUL 6 <br> CLTS </h3>
+  <h3>MODUL 6 <br> COTS </h3>
   <br />
   <img width="512" height="512" alt="telyu" src="https://github.com/user-attachments/assets/724a3291-bcf9-448d-a395-3886a8659d79" />
   <br />
@@ -35,9 +35,9 @@
 
 ### Dasar Teori
 
-Client–Server atau Client-Side dan Server-Side (CLTS) merupakan konsep arsitektur dalam pengembangan sistem berbasis web yang membagi proses kerja antara dua komponen utama, yaitu client (pengguna) dan server (penyedia layanan). Client-side adalah bagian yang berjalan di sisi pengguna, biasanya melalui browser, yang bertugas menampilkan antarmuka dan menangani interaksi pengguna menggunakan teknologi seperti HTML, CSS, dan JavaScript. Sedangkan server-side adalah bagian yang berjalan di server untuk memproses permintaan dari client, mengelola logika bisnis, serta berinteraksi dengan database menggunakan bahasa pemrograman seperti PHP, Java, atau Node.js.
+Coding on the Spot (COTS) merupakan metode dalam pengembangan perangkat lunak di mana proses penulisan kode dilakukan secara langsung dan spontan tanpa perencanaan yang terlalu mendalam sebelumnya. Pendekatan ini biasanya digunakan dalam situasi seperti kompetisi pemrograman, live coding, wawancara teknis, atau ketika developer perlu menyelesaikan masalah secara cepat. COTS menuntut kemampuan berpikir logis, pemahaman konsep dasar pemrograman, serta keterampilan problem solving yang baik karena solusi harus dibuat secara real-time.
 
-Secara teoritis, komunikasi antara client dan server dilakukan melalui protokol HTTP/HTTPS dalam bentuk request dan response. Client mengirimkan request ke server, kemudian server memproses permintaan tersebut dan mengembalikan response berupa data atau halaman web. Konsep ini mendukung pemisahan tanggung jawab (separation of concerns), meningkatkan keamanan, serta memungkinkan pengelolaan sistem yang lebih terstruktur dan skalabel. Dengan adanya pembagian ini, aplikasi web dapat berjalan lebih efisien, responsif, dan mudah dikembangkan.
+Secara teoritis, COTS menekankan pada kecepatan, ketepatan, dan efisiensi dalam menghasilkan solusi, dengan memanfaatkan pengetahuan yang sudah dimiliki tanpa bergantung pada dokumentasi atau referensi yang panjang. Meskipun efektif untuk menyelesaikan masalah sederhana atau mendesak, pendekatan ini memiliki keterbatasan seperti kurangnya perencanaan struktur kode, potensi kesalahan lebih tinggi, dan sulitnya maintainability. Oleh karena itu, COTS lebih cocok digunakan sebagai metode latihan atau pengujian kemampuan, bukan sebagai pendekatan utama dalam pengembangan sistem berskala besar.
 
 ### Tugas 6 - Toko Kelontong Pak Cik dan Aimar
 
