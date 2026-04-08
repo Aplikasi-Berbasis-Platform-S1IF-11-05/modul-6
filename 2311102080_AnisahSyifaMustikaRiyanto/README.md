@@ -2,7 +2,7 @@
   <br />
   <h1>LAPORAN PRAKTIKUM <br> APLIKASI BERBASIS PLATFORM </h1>
   <br />
-  <h3>MODUL 6 <br> JAVASCRIPT & JQUERY </h3>
+  <h3>MODUL 6 <br> CODING ON THE SPOT </h3>
   <br />
   <img width="512" height="512" alt="telyu" src="https://github.com/user-attachments/assets/724a3291-bcf9-448d-a395-3886a8659d79" />
   <br />
@@ -35,23 +35,103 @@
 
 ### Dasar Teori
 
-JavaScript merupakan bahasa pemrograman yang digunakan untuk membuat halaman web menjadi lebih dinamis dan interaktif. Jika HTML berfungsi sebagai struktur dan CSS sebagai pengatur tampilan, maka JavaScript berperan dalam mengatur perilaku atau aksi dari sebuah website. Dengan JavaScript, halaman web dapat merespons berbagai interaksi pengguna seperti klik tombol, input data, hingga perubahan konten secara langsung tanpa perlu memuat ulang halaman.
+Pada modul COTS (Coding On The Spot), pengembangan aplikasi dilakukan dengan memanfaatkan integrasi antara sisi backend dan frontend yang sama-sama menggunakan JavaScript. Materi yang dipelajari mencakup berbagai aspek penting dalam pengembangan web, seperti konsep dasar pemrograman, penggunaan framework, library, serta pemanfaatan tools pendukung untuk meningkatkan efisiensi dan kualitas pengembangan aplikasi.
 
-JavaScript berjalan di sisi client (browser), sehingga kode dapat langsung dieksekusi oleh browser pengguna seperti Chrome, Firefox, atau Edge. Selain itu, JavaScript juga dapat digunakan di sisi server dengan bantuan teknologi seperti Node.js, sehingga penggunaannya menjadi sangat luas dalam pengembangan aplikasi web modern.
+1. Aplikasi Berbasis Web
 
-Salah satu konsep penting dalam JavaScript adalah manipulasi DOM (Document Object Model). DOM merupakan representasi struktur halaman HTML dalam bentuk objek, yang memungkinkan JavaScript untuk mengakses dan mengubah isi, struktur, maupun tampilan halaman secara langsung. Dengan DOM, elemen HTML dapat ditambahkan, dihapus, atau diubah secara dinamis sesuai kebutuhan.
+Aplikasi berbasis web merupakan aplikasi yang dapat diakses melalui browser tanpa perlu instalasi di perangkat pengguna. Aplikasi ini terdiri dari dua bagian utama, yaitu frontend (client-side) yang berinteraksi langsung dengan pengguna, dan backend (server-side) yang bertugas mengelola data serta logika aplikasi. Komunikasi antara frontend dan backend biasanya dilakukan melalui HTTP request dan response.
 
-Selain itu, JavaScript juga mendukung berbagai fitur seperti variabel, fungsi, percabangan (if-else), perulangan (loop), serta event handling. Event handling memungkinkan program merespons kejadian tertentu, seperti klik mouse, penekanan tombol keyboard, atau pergerakan kursor.
+2. CRUD (Create, Read, Update, Delete)
 
-JavaScript juga memiliki kemampuan untuk berkomunikasi dengan server melalui teknik seperti AJAX (Asynchronous JavaScript and XML) atau Fetch API, sehingga data dapat diambil atau dikirim tanpa harus melakukan reload halaman. Hal ini sangat penting dalam pembuatan aplikasi web modern seperti dashboard, media sosial, dan aplikasi berbasis web lainnya.
+CRUD merupakan konsep dasar dalam pengelolaan data pada sebuah aplikasi. CRUD terdiri dari:
 
-Dengan berbagai kemampuannya, JavaScript menjadi salah satu teknologi utama dalam pengembangan web karena mampu meningkatkan interaktivitas, efisiensi, dan pengalaman pengguna secara keseluruhan.
+Create: Menambahkan data baru
+Read: Menampilkan atau membaca data
+Update: Mengubah data yang sudah ada
+Delete: Menghapus data
+
+Pada aplikasi ini, konsep CRUD diterapkan untuk mengelola data produk pada toko kelontong, seperti menambah produk baru, melihat daftar produk, mengedit data, dan menghapus produk.
+
+3. JavaScript
+
+JavaScript merupakan bahasa pemrograman yang digunakan untuk membuat halaman web menjadi interaktif. Dalam aplikasi ini, JavaScript digunakan untuk mengatur logika program seperti pengolahan data, pengambilan input dari pengguna, serta komunikasi dengan server.
+
+JavaScript juga mendukung penggunaan asynchronous programming yang memungkinkan pengambilan data dari server tanpa harus memuat ulang halaman.
+
+4. jQuery
+
+jQuery adalah library JavaScript yang digunakan untuk menyederhanakan penulisan kode JavaScript. Dengan jQuery, manipulasi DOM, penanganan event, dan komunikasi dengan server menjadi lebih mudah dan ringkas.
+
+Dalam modul ini, jQuery digunakan untuk:
+
+Mengambil data dari server menggunakan AJAX
+Menampilkan data ke dalam tabel secara dinamis
+Mengambil nilai input dari form
+Mengatur event seperti klik tombol
+Mengelola tampilan modal
+
+5. AJAX (Asynchronous JavaScript and XML)
+
+AJAX merupakan teknik yang memungkinkan aplikasi web berkomunikasi dengan server secara asynchronous tanpa harus me-reload halaman. Dengan AJAX, data dapat dikirim dan diterima dalam format seperti JSON.
+
+Pada aplikasi ini, AJAX digunakan untuk:
+
+Mengambil data produk (GET)
+Menambahkan data produk (POST)
+Mengupdate data produk (PUT)
+Menghapus data produk (DELETE)
+
+Sehingga interaksi pengguna menjadi lebih cepat dan efisien.
+
+6. JSON (JavaScript Object Notation)
+
+JSON adalah format pertukaran data yang ringan dan mudah dibaca oleh manusia maupun mesin. JSON digunakan untuk menyimpan dan mengirim data antara client dan server.
+
+Struktur JSON terdiri dari pasangan key dan value, contohnya:
+
+```
+{
+  "id": 1,
+  "name": "Beras",
+  "price": 12000
+}
+```
+
+JSON digunakan sebagai media penyimpanan data produk pada file products.json.
+
+7. ExpressJS
+
+ExpressJS merupakan framework untuk Node.js yang digunakan untuk membangun server dan API dengan lebih mudah. ExpressJS menyediakan fitur routing untuk menangani berbagai request dari client seperti GET, POST, PUT, dan DELETE.
+
+Pada modul ini, ExpressJS digunakan untuk:
+
+Membuat API endpoint /api/products
+Mengelola request dari frontend
+Menghubungkan aplikasi dengan file JSON sebagai database sederhana
+
+8. Node.js
+
+Node.js adalah runtime environment yang memungkinkan JavaScript dijalankan di sisi server. Dengan Node.js, pengembang dapat menggunakan JavaScript tidak hanya di browser, tetapi juga untuk membangun backend aplikasi.
+
+Node.js digunakan dalam modul ini untuk menjalankan server ExpressJS.
+
+9. Bootstrap
+
+Bootstrap merupakan framework CSS yang digunakan untuk mempercepat pembuatan tampilan web yang responsif dan menarik. Bootstrap menyediakan berbagai komponen siap pakai seperti navbar, tabel, tombol, dan modal.
+
+Pada aplikasi ini, Bootstrap digunakan untuk:
+
+Membuat tampilan tabel produk
+Mendesain form input dalam modal
+Membuat tampilan lebih responsif dan user-friendly
 
 ### Tugas 6 - Toko Kelontong Pak Cik dan Aimar
 
 #### Source Code - index.html
 
 ```
+<!-- Anisah Syifa Mustika Riyanto -->
+
 <!doctype html>
 <html lang="id">
   <head>
@@ -165,6 +245,8 @@ Dengan berbagai kemampuannya, JavaScript menjadi salah satu teknologi utama dala
 #### Source Code - script.js
 
 ```
+// Anisah Syifa Mustika Riyanto
+
 let deleteId = null;
 
 $(document).ready(function () {
@@ -275,6 +357,8 @@ sesudah run:
 #### Source Code - server.js
 
 ```
+// Anisah Syifa Mustika Riyanto
+
 sebelumnya hanya "[]"
 sesudah run:
 const express = require('express');
@@ -336,7 +420,6 @@ Penghapusan
 
 ### Deskripsi Kode
 
-```
 Project Toko Kelontong Pak Cik dan Aimar ini merupakan aplikasi web sederhana yang digunakan untuk mengelola data produk dengan fitur CRUD (Create, Read, Update, Delete). Aplikasi ini dibangun menggunakan ExpressJS sebagai backend, Bootstrap sebagai framework CSS untuk tampilan, serta jQuery untuk manipulasi DOM dan komunikasi dengan server menggunakan AJAX. Data produk tidak disimpan dalam database, melainkan menggunakan file JSON (products.json) sebagai media penyimpanan, sehingga implementasinya lebih sederhana dan ringan.
 
 Pada bagian backend, file server.js berfungsi sebagai server yang menangani seluruh proses pengolahan data. ExpressJS digunakan untuk membuat endpoint API seperti GET untuk mengambil seluruh data produk, POST untuk menambahkan data baru, PUT untuk memperbarui data, serta DELETE untuk menghapus data. Server juga menggunakan middleware express.json() untuk membaca data dalam format JSON yang dikirim dari frontend, serta express.static() untuk menyajikan file frontend dari folder public. Modul fs digunakan untuk membaca dan menulis data ke dalam file products.json, sehingga setiap perubahan data akan langsung tersimpan secara permanen.
@@ -344,4 +427,3 @@ Pada bagian backend, file server.js berfungsi sebagai server yang menangani selu
 Pada bagian frontend, file index.html digunakan untuk membangun tampilan antarmuka dengan memanfaatkan class bawaan Bootstrap tanpa menggunakan CSS tambahan. Tampilan dibuat lebih menarik dengan penggunaan background berwarna cerah (bg-warning-subtle), serta penekanan pada nama toko “Pak Cik & Aimar” menggunakan komponen badge. Halaman utama menampilkan tombol untuk menambahkan produk, tabel untuk menampilkan data produk, serta modal form untuk input dan edit data. Selain itu, terdapat juga modal konfirmasi untuk proses penghapusan data agar lebih aman dan interaktif.
 
 Interaksi pengguna diatur melalui file script.js menggunakan jQuery. Saat halaman pertama kali dimuat, fungsi akan mengambil data produk dari server menggunakan metode GET dan menampilkannya ke dalam tabel secara dinamis. Proses penambahan dan pengeditan data dilakukan melalui form yang dikirim ke server menggunakan metode POST atau PUT dalam format JSON, sedangkan proses penghapusan dilakukan menggunakan metode DELETE yang dipicu setelah konfirmasi pada modal. jQuery juga digunakan untuk memanipulasi elemen HTML seperti menampilkan data ke tabel, mengisi form saat edit, serta membuka dan menutup modal.
-```
