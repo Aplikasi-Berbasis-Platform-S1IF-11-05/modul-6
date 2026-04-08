@@ -2,7 +2,7 @@
   <br />
   <h1>LAPORAN PRAKTIKUM <br> APLIKASI BERBASIS PLATFORM </h1>
   <br />
-  <h3>MODUL 6 <br> CLTS </h3>
+  <h3>MODUL 6 <br> COTS </h3>
   <br />
   <img width="512" height="512" alt="telyu" src="https://github.com/user-attachments/assets/724a3291-bcf9-448d-a395-3886a8659d79" />
   <br />
@@ -34,7 +34,7 @@
 <hr>
 
 ## 1. Dasar Teori
-Client-side adalah konsep pemrosesan data dan interaksi yang dijalankan di sisi pengguna, yaitu di browser atau perangkat pengguna, bukan di server. Dalam pengembangan web, client-side biasanya menggunakan bahasa HTML, CSS, dan JavaScript untuk membuat halaman web menjadi interaktif, responsif, dan dinamis. Pemrosesan client-side memungkinkan validasi form, animasi, efek visual, serta manipulasi data sementara seperti LocalStorage tanpa harus selalu berkomunikasi dengan server. Pendekatan ini mempercepat respon aplikasi dan mengurangi beban server, meskipun tetap memiliki keterbatasan pada keamanan dan kemampuan perangkat pengguna. Dengan kata lain, client-side berfokus pada pengalaman pengguna (user experience) melalui eksekusi logika dan tampilan langsung di sisi browser.
+Coding On The Spot (COTS) merujuk pada metode pengembangan perangkat lunak yang dilakukan secara langsung di tempat tanpa perencanaan yang terlalu panjang atau tanpa menggunakan komponen yang sudah jadi. Dalam pendekatan ini, pengembang menulis kode secara langsung sesuai kebutuhan yang muncul saat itu juga, biasanya untuk menyelesaikan masalah dengan cepat atau membuat prototipe sederhana. Coding on the spot sering digunakan pada proyek kecil, tugas praktikum, atau pengembangan awal karena lebih fleksibel dan tidak memerlukan proses desain yang kompleks. Namun, metode ini memiliki kelemahan seperti struktur kode yang kurang rapi, dokumentasi yang minim, serta potensi kesalahan yang lebih tinggi jika tidak diikuti dengan pengujian yang baik. Oleh karena itu, meskipun coding on the spot dapat mempercepat proses pengembangan, pendekatan ini sebaiknya tetap diimbangi dengan perencanaan dan standar penulisan kode agar sistem yang dihasilkan tetap terstruktur dan mudah dikembangkan kembali di masa depan
 
 ## 2. Source Code
 ### Source Code HTML
