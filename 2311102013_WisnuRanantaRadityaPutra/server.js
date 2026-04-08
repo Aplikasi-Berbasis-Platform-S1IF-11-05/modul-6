@@ -55,6 +55,7 @@ app.delete('/api/products/:id', (req, res) => {
     res.json({ message: 'Produk berhasil dihapus!' });
 });
 
+
 app.listen(PORT, () => {
     console.log(`Server berjalan di http://localhost:${PORT}`);
 });
