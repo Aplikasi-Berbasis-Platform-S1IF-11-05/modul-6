@@ -36,15 +36,11 @@
 
 # Dasar Teori
 
-JavaScript merupakan bahasa pemrograman yang digunakan untuk membuat halaman web menjadi interaktif dan dinamis. Dengan JavaScript, pengguna dapat melakukan manipulasi terhadap elemen halaman melalui DOM (Document Object Model), seperti menampilkan data, menangani input pengguna, serta mengubah tampilan secara langsung tanpa perlu melakukan reload halaman.
+1. JavaScript merupakan bahasa pemrograman yang digunakan untuk membuat halaman web menjadi interaktif dan dinamis. Dengan JavaScript, pengguna dapat melakukan manipulasi terhadap elemen halaman melalui DOM (Document Object Model), seperti menampilkan data, menangani input pengguna, serta mengubah tampilan secara langsung tanpa perlu melakukan reload halaman.
 
-jQuery adalah library JavaScript yang mempermudah proses manipulasi DOM, event handling, dan komunikasi dengan server menggunakan AJAX. Dengan sintaks yang lebih sederhana, jQuery memungkinkan pengembangan fitur interaktif seperti pengambilan data, penambahan data, pengeditan, dan penghapusan data (CRUD) secara lebih efisien.
-
-Bootstrap merupakan framework CSS yang digunakan untuk membangun tampilan web yang responsif dan modern. Bootstrap menyediakan berbagai komponen siap pakai seperti tombol, tabel, card, dan modal, sehingga mempermudah pembuatan antarmuka yang rapi tanpa harus menulis CSS secara manual.
-
-Express JS adalah framework backend berbasis Node.js yang digunakan untuk membuat server sederhana. Dalam praktikum ini, Express digunakan untuk menangani request dari client seperti mengambil data (GET), menambah data (POST), mengubah data (PUT), dan menghapus data (DELETE). Data disimpan dalam bentuk file JSON sehingga tidak memerlukan database.
-
-Konsep CRUD (Create, Read, Update, Delete) merupakan dasar dalam pengelolaan data pada aplikasi. Pada praktikum ini, CRUD diimplementasikan dengan jQuery sebagai penghubung antara frontend dan backend melalui AJAX, serta Express JS sebagai server yang mengelola data JSON.
+2. COTS (Commercial Off-The-Shelf) adalah perangkat lunak atau produk teknologi yang sudah jadi dan dijual secara umum di pasaran, sehingga dapat langsung digunakan tanpa perlu dikembangkan dari awal. COTS biasanya dibuat oleh perusahaan dan dirancang untuk memenuhi kebutuhan umum banyak pengguna, seperti aplikasi perkantoran, sistem manajemen, atau software akuntansi. Keunggulan utama COTS adalah waktu implementasi yang cepat, biaya pengembangan yang lebih rendah, serta dukungan dan pembaruan dari vendor. Namun, COTS juga memiliki keterbatasan seperti kurang fleksibel untuk kebutuhan khusus dan ketergantungan pada penyedia produk. Dalam pengembangan sistem, penggunaan COTS sering menjadi alternatif dibandingkan membangun sistem dari nol (custom development), terutama jika kebutuhan sistem tidak terlalu spesifik. Contoh penggunaan COTS antara lain software seperti Microsoft Office untuk produktivitas, sistem ERP siap pakai, atau platform CMS. Secara umum, pemilihan COTS harus mempertimbangkan kesesuaian fitur, biaya lisensi, kemudahan integrasi, serta dukungan teknis agar dapat memberikan manfaat maksimal bagi organisasi atau pengguna.
+   
+3. Express JS adalah framework backend berbasis Node.js yang digunakan untuk membuat server sederhana. Dalam praktikum ini, Express digunakan untuk menangani request dari client seperti mengambil data (GET), menambah data (POST), mengubah data (PUT), dan menghapus data (DELETE). Data disimpan dalam bentuk file JSON sehingga tidak memerlukan database.
 
 # Tugas 6
 ## 1. Source Kode index.html
