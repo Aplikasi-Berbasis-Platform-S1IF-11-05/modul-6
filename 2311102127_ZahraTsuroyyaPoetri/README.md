@@ -2,7 +2,7 @@
   <br />
   <h1>LAPORAN PRAKTIKUM <br> APLIKASI BERBASIS PLATFORM </h1>
   <br />
-  <h3>MODUL 6 <br> JAVASCRIPT & JQUERY </h3>
+  <h3>MODUL 6 <br> CODING ON THE SPOT </h3>
   <br />
   <img width="512" height="512" alt="telyu" src="https://github.com/user-attachments/assets/724a3291-bcf9-448d-a395-3886a8659d79" />
   <br />
@@ -35,11 +35,9 @@
 
 ### Dasar Teori
 
-JavaScript merupakan bahasa pemrograman tingkat tinggi (high-level language) yang bersifat dinamis dan banyak digunakan dalam pengembangan web. Bahasa ini dapat berjalan di berbagai browser seperti Google Chrome dan Mozilla Firefox, serta digunakan untuk membuat tampilan web menjadi lebih interaktif. JavaScript pertama kali dikembangkan oleh Brendan Eich dan awalnya berfungsi sebagai client-side scripting. Namun, saat ini JavaScript juga digunakan di berbagai platform lain seperti server, aplikasi mobile, hingga Internet of Things (IoT), sehingga menjadikannya salah satu bahasa pemrograman paling populer di dunia.
+Coding on the spot adalah cara menguji kemampuan coding secara langsung dalam waktu yang terbatas. Dalam kegiatan ini, seseorang dituntut untuk bisa memahami soal, menyusun logika, dan menuliskan kode dengan cepat dan tepat. Kemampuan dasar seperti membuat algoritma sederhana, memahami sintaks, dan memperbaiki error sangat penting agar program bisa berjalan dengan baik.
 
-Dalam pengembangannya, JavaScript sering dipadukan dengan library atau framework untuk mempermudah proses coding. Salah satu library yang cukup populer adalah jQuery. jQuery dirancang untuk menyederhanakan penulisan kode JavaScript, terutama dalam manipulasi DOM, pengelolaan event, dan pembuatan animasi. Dengan menggunakan jQuery, pengembang dapat menghindari penulisan kode yang berulang (redundan), sehingga meningkatkan efisiensi serta keterbacaan kode.
-
-Penggunaan framework dan library seperti jQuery juga memberikan keuntungan dalam hal pengembangan aplikasi web yang lebih terstruktur dan mudah dipelihara. Untuk proyek berskala kecil, jQuery sudah cukup efisien digunakan. Namun, untuk aplikasi yang lebih kompleks dengan kebutuhan pengelolaan data dan antarmuka yang dinamis, biasanya digunakan framework modern seperti React atau Angular. Oleh karena itu, pemilihan teknologi harus disesuaikan dengan kebutuhan proyek, kompleksitas fitur, serta skala pengembangan aplikasi.
+Selain itu, penggunaan framework seperti Laravel juga membantu dalam coding karena sudah menyediakan fitur siap pakai, seperti routing dan pengelolaan database. Dengan Laravel, penulisan kode jadi lebih rapi, terstruktur, dan bisa lebih cepat diselesaikan meskipun waktunya terbatas
 
 ### Tugas 6 - Toko Kelontong Pak Cik dan Aimar
 
@@ -456,8 +454,3 @@ Fungsi utama kode ini adalah untuk melakukan CRUD (Create, Read, Update, Delete)
 Cara kerjanya adalah controller membaca data dari file JSON, lalu mengirimkannya ke view untuk ditampilkan dalam tabel. Saat tombol edit atau hapus diklik, jQuery akan mengambil data dari tombol dan mengisinya ke dalam form modal. Setelah form disubmit, data akan diproses dan disimpan kembali ke file JSON.
 
 Output dari kode ini adalah halaman inventori yang interaktif, di mana pengguna dapat melihat, menambah, mengubah, dan menghapus data produk dengan tampilan yang rapi dan responsif. 
-
-### Refrensi
-[1] Supardi, I. Y. (2021). Semua Bisa Menjadi Programmer JavaScript & Node.js. Jakarta: PT Elex Media Komputindo. ISBN: 978-623-00-1976-0.
-
-[2] Maulani, G., Kurniawan, Y. I., Munawir, T., Fauzi, W. M., Ikhsan, M., Jannah, U. M., Bachtiar, A., Kaharu, N. A., & S.Kom., M.Kom. (2025). Pemrograman Web. Pamekasan: Alifba Media. ISBN: 978-634-7124-04-3.
