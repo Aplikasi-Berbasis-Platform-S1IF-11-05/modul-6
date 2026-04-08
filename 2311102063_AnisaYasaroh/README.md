@@ -2,7 +2,7 @@
   <br />
   <h1>LAPORAN PRAKTIKUM <br> APLIKASI BERBASIS PLATFORM </h1>
   <br />
-  <h3>MODUL 6 <br> JAVASCRIPT & JQUERY </h3>
+  <h3>MODUL 6 <br> CLTS </h3>
   <br />
   <img width="512" height="512" alt="telyu" src="https://github.com/user-attachments/assets/724a3291-bcf9-448d-a395-3886a8659d79" />
   <br />
@@ -35,13 +35,13 @@
 
 ## Dasar Teori
 
-JavaScript adalah bahasa pemrograman yang digunakan untuk menambahkan interaktivitas pada halaman web, sehingga halaman tidak hanya bersifat statis tetapi juga mampu merespons tindakan pengguna seperti klik tombol, pengisian form, validasi data, serta perubahan tampilan secara dinamis. JavaScript bekerja di sisi klien (client-side), yaitu dijalankan langsung oleh browser pengguna, sehingga proses interaksi dapat berlangsung lebih cepat tanpa selalu bergantung pada server. Bahasa ini menjadi salah satu komponen utama dalam pengembangan web modern bersama HTML dan CSS.
+CLTS (Client-Server dan Layanan Terdistribusi) merupakan konsep arsitektur aplikasi yang memisahkan peran antara client dan server dalam pengolahan data. Client berfungsi sebagai antarmuka pengguna yang menampilkan data dan menerima input, sedangkan server bertugas memproses permintaan serta mengelola data. Komunikasi antara keduanya dilakukan melalui protokol HTTP menggunakan metode seperti GET, POST, PUT, dan DELETE yang digunakan dalam proses CRUD (Create, Read, Update, Delete).
 
-jQuery merupakan pustaka (library) JavaScript yang dirancang untuk menyederhanakan penulisan kode JavaScript, terutama dalam manipulasi elemen HTML, pengelolaan event, animasi, dan pertukaran data menggunakan AJAX. Dengan sintaks yang lebih ringkas, jQuery mempermudah pengembang dalam membuat aplikasi web yang interaktif. Dalam praktikum ini, JavaScript dan jQuery digunakan untuk membangun fitur CRUD (Create, Read, Update, Delete) pada data produk toko kelontong, sehingga proses tambah, edit, hapus, dan tampil data dapat dilakukan secara dinamis tanpa memuat ulang halaman.
+Pada implementasi modul ini, konsep CLTS diterapkan menggunakan REST API sederhana dengan Node.js dan Express sebagai server, serta JavaScript (jQuery) sebagai client. Data produk disimpan dalam file JSON yang diakses melalui endpoint API, sehingga client dapat mengambil, menambah, mengubah, dan menghapus data secara dinamis. Penggunaan AJAX memungkinkan proses pertukaran data dilakukan tanpa reload halaman, sehingga aplikasi menjadi lebih responsif dan sesuai dengan prinsip layanan terdistribusi dalam CLTS.memungkinkan pertukaran data dilakukan tanpa perlu me-refresh halaman, sehingga aplikasi menjadi lebih interaktif dan responsif.
 
-## Penjelasan Kode Javascript & jQuery
+## Penjelasan Kode CLTS
 
-Kode JavaScript dan jQuery digunakan untuk menampilkan serta mengelola data produk pada halaman web. Proses tambah, edit, dan hapus data dilakukan menggunakan AJAX tanpa perlu memuat ulang halaman. Selain itu, tabel produk dibuat lebih interaktif dengan bantuan DataTables.
+Pada implementasi ini, JavaScript dan jQuery berperan sebagai sisi client dalam arsitektur CLTS yang menangani interaksi pengguna pada halaman web, sedangkan sisi server dibangun menggunakan ExpressJS untuk mengelola data melalui REST API. Data produk diperoleh melalui request AJAX dan ditampilkan secara dinamis ke dalam tabel HTML menggunakan manipulasi DOM. Setiap proses seperti penambahan, pengubahan, dan penghapusan data akan dikirim ke server menggunakan metode HTTP dan hasilnya langsung diperbarui pada tampilan. Selain itu, penggunaan DataTables membantu meningkatkan interaktivitas tabel dengan fitur pencarian, pengurutan, dan pagination sehingga memudahkan pengguna dalam mengelola data.
 
 ## Task 6: Toko Kelontong Pak Cik dan Aimar
 
@@ -445,6 +445,6 @@ app.listen(PORT, () => {
 
 ### Penjelasan Code
 
-Kode JavaScript dan jQuery pada task ini digunakan untuk mengelola data produk pada web inventaris toko secara dinamis melalui konsep CRUD (Create, Read, Update, Delete). Fungsi `loadProducts()` digunakan untuk mengambil data produk dari server menggunakan AJAX metode GET, kemudian menampilkannya ke dalam tabel HTML secara otomatis. Sebelum data dimuat kembali, tabel akan di-destroy terlebih dahulu agar plugin DataTables dapat diinisialisasi ulang dengan benar sehingga fitur pencarian, pengurutan, dan pagination tetap berjalan.
+Kode JavaScript dan jQuery pada task ini berperan sebagai sisi client dalam arsitektur CLTS yang bertugas menangani interaksi pengguna pada aplikasi. Fungsi `loadProducts()` digunakan untuk mengambil data produk dari server melalui AJAX dengan metode GET, kemudian menampilkannya ke dalam tabel HTML secara dinamis. Fungsi `showAlert()` digunakan untuk menampilkan notifikasi kepada pengguna setelah proses CRUD berhasil dilakukan. Selain itu, DataTables digunakan untuk meningkatkan interaktivitas tabel dengan fitur pencarian, pengurutan, dan pagination, serta dilakukan proses destroy terlebih dahulu agar tabel dapat diperbarui dengan benar setiap kali data berubah.
 
-Selain fungsi utama tersebut, terdapat fungsi `showToast()` yang berperan menampilkan notifikasi keberhasilan proses tambah, edit, dan hapus data agar pengguna memperoleh umpan balik secara langsung. Event `submit` pada form digunakan untuk membaca input pengguna, menentukan apakah data akan ditambahkan atau diperbarui berdasarkan nilai `editIndex`, lalu mengirim data ke server menggunakan metode POST atau PUT. Sementara itu, event klik pada tombol edit digunakan untuk memuat data lama ke dalam form modal, dan tombol delete memanggil modal konfirmasi sebelum data dihapus dengan metode DELETE. 
+Proses CRUD dilakukan melalui event yang terpasang pada elemen halaman, seperti event `submit` pada form untuk menambah atau mengubah data menggunakan metode POST dan PUT, serta event klik pada tombol edit dan delete untuk mengambil data yang dipilih dan mengirim request DELETE ke server. Data yang dipilih saat proses edit akan ditampilkan kembali ke dalam form agar dapat diperbarui oleh pengguna, sedangkan proses delete diawali dengan konfirmasi untuk mencegah kesalahan penghapusan. Server yang dibangun menggunakan ExpressJS akan memproses setiap permintaan tersebut dan mengembalikan respons ke client untuk ditampilkan kembali. Dengan mekanisme ini, komunikasi antara client dan server dalam konsep CLTS dapat berjalan dengan baik sehingga data dapat dikelola secara dinamis dan terstruktur.
